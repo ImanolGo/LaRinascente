@@ -3,7 +3,10 @@
 
   <of_settings>
 
-      <window title="LaRinascenteApp" x="0" y="0" width="600" height="480" fullscreen="0" showCursor="1"/>
+      <!-- <window title="LaRinascenteApp" x="0" y="0" width="640" height="300" fullscreen="0" showCursor="1"/> -->
+      <window title="LaRinascenteApp" x="0" y="0" width="2000" height="936" fullscreen="0" showCursor="1"/>
+
+
 
 
     <debug showCursor="1" setVerbose="1"/> 
@@ -15,6 +18,7 @@
   <textures>
 
     <texture name="FACADE" path="images/general/LaRinascenteFacade.png"/>
+    <texture name="STAR" path="images/general/star_small.png"/>
 
   </textures>
 

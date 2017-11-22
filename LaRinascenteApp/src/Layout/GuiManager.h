@@ -71,6 +71,8 @@ private:
     
     void setupGuiParameters();
     
+    void setupLayoutGui();
+    
     void setupNoiseGui();
     
     void drawRectangle();
@@ -87,6 +89,8 @@ private:
     
 
     ofParameterGroup      m_parameters;
+    
+    ofParameter<float>        m_starSize;
     
     ofParameter<int>        m_noiseResolution;
     ofParameter<float>      m_noiseFrequency;

@@ -67,6 +67,9 @@ public:
     //! Returns the mask manager
     MaskManager&  getMaskManager() { return m_maskManager; }
     
+    //! Returns the stars manager
+    StarsManager&  getStarsManager() { return m_starsManager; }
+    
 
     //==========================================================================
     
@@ -107,8 +110,9 @@ private:
     LayoutManager            m_layoutManager;            ///< Manages the layout
     KeyboardManager          m_keyboardManager;          ///< Manages the keyboard
     GuiManager               m_guiManager;               ///< Manages the graphical user interface
-    NoiseManager               m_noiseManager;             ///< Manages the noise generator
+    NoiseManager             m_noiseManager;             ///< Manages the noise generator
     MaskManager              m_maskManager;              ///< Manages all the masks
+    StarsManager             m_starsManager;             ///< Manages the stars manager
     
     bool                     m_debugMode;
     bool                     m_initialized;

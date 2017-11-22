@@ -15,7 +15,7 @@
 #include "SvgVisual.h"
 #include "ImageVisual.h"
 #include "RectangleVisual.h"
-
+#include "ofxMask.h"
 
 
 //========================== class LayoutManager ==============================
@@ -57,7 +57,7 @@ public:
     
     const ofRectangle& getWindowRect() {return m_windowRect;}
     
-    const ofFbo& getCurrentFbo(){return m_fbo;}
+    const ofFbo& getFbo(){return m_fbo;}
 
 
 private:
@@ -78,7 +78,9 @@ private:
 
     //! Add all visuals as overlays
     void addVisuals();
-
+    
+    void setupMask();
+    
     void setupFbo();
     
     void updateFbos();
@@ -110,6 +112,8 @@ private:
 
     ofFbo               m_fbo;
     ofColor             m_color;
+    
+    ofxMask             m_mask;
 
 };
 

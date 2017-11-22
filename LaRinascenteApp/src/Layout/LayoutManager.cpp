@@ -51,6 +51,7 @@ void LayoutManager::setup()
     this->createImageVisuals();
     
     this->setupFbo();
+    this->setupMask();
     this->setupWindowFrames();
 
     //this->addVisuals();
@@ -70,6 +71,24 @@ void LayoutManager::setupFbo()
     m_fbo.begin(); ofClear(0); m_fbo.end();
 }
 
+void LayoutManager::setupMask()
+{
+    float width = AppManager::getInstance().getSettingsManager().getAppWidth();
+    float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
+    
+    m_mask.allocate(width, height, ofxMask::ALPHA);
+    
+    
+    auto image = AppManager::getInstance().getResourceManager().getTexture("FACADE");
+    m_mask.beginMask();
+    
+    m_mask.beginMask();
+        image->draw(0,0,width,height);
+    m_mask.endMask();
+    
+    
+}
+
 void LayoutManager::resetWindowRects()
 {
     
@@ -78,12 +97,19 @@ void LayoutManager::resetWindowRects()
     float ratio = width/ height;
     float frame_width = ofGetWidth() - AppManager::getInstance().getGuiManager().getWidth() - 2*MARGIN;
     
-    m_windowRect.width = frame_width- 2*MARGIN;
+    
+    m_windowRect.width = frame_width- 4*MARGIN;
     m_windowRect.height =  m_windowRect.width / ratio;
     
-    m_windowRect.x = AppManager::getInstance().getGuiManager().getWidth()  + 3*MARGIN;
-    m_windowRect.y = ofGetHeight()*0.5 - m_windowRect.height/2;
-
+    if(m_windowRect.height >= (ofGetHeight() - 4*MARGIN))
+    {
+         m_windowRect.height =  ofGetHeight() - 4*MARGIN;
+         m_windowRect.width =  m_windowRect.height * ratio;
+    }
+    
+    m_windowRect.x = AppManager::getInstance().getGuiManager().getWidth() + MARGIN +(ofGetWidth() -  AppManager::getInstance().getGuiManager().getWidth())*0.5 - m_windowRect.width*0.5;
+    m_windowRect.y = ofGetHeight()*0.5 - m_windowRect.height*0.5;
+    
 }
 
 
@@ -114,9 +140,23 @@ void LayoutManager::update()
 
 void LayoutManager::updateFbos()
 {
+    auto image = AppManager::getInstance().getResourceManager().getTexture("FACADE");
+    float width = AppManager::getInstance().getSettingsManager().getAppWidth();
+    float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
+    
     ofEnableAlphaBlending();
     m_fbo.begin();
         ofClear(0, 0, 0);
+        m_mask.begin();
+            AppManager::getInstance().getStarsManager().draw();
+        m_mask.end();
+    
+        //m_mask.drawMasker();
+        //m_mask.drawMaskee();
+    
+        AppManager::getInstance().getStarsManager().draw();
+        image->draw(0,0,width,height);
+    
     m_fbo.end();
     ofDisableAlphaBlending();
 }
@@ -128,7 +168,7 @@ void LayoutManager::createTextVisuals()
     float w = size*50;
     float h = size;
     float x =  m_windowRect.x + m_windowRect.getWidth()*0.5;
-    float y =  m_windowRect.y - h - 2*MARGIN;
+    float y =  m_windowRect.y - h -MARGIN;
     ofPoint pos = ofPoint(x, y);
     string text = "Preview";
     string fontName = LAYOUT_FONT_LIGHT;
@@ -143,7 +183,7 @@ void LayoutManager::createTextVisuals()
 void LayoutManager::resetWindowTitles()
 {
     float x =  m_windowRect.x + m_windowRect.getWidth()*0.5;
-    float y =  m_windowRect.y -  m_textVisuals["Preview"]->getHeight()*0.5 - MARGIN;
+    float y =  m_windowRect.y -  m_textVisuals["Preview"]->getHeight()*0.2;
     ofPoint pos = ofPoint(x, y);
     m_textVisuals["Preview"]->setPosition(pos);
     

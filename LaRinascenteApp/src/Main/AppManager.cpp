@@ -70,6 +70,7 @@ void AppManager::setupManagers()
     m_visualEffectsManager.setup();
     m_maskManager.setup();
     m_layoutManager.setup();
+    m_starsManager.setup();
     m_keyboardManager.setup();
     m_noiseManager.setup();
     m_guiManager.setup();

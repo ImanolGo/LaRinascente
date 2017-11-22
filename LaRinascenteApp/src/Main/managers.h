@@ -19,4 +19,5 @@
 #include "GuiManager.h"
 #include "MaskManager.h"
 #include "NoiseManager.h"
+#include "StarsManager.h"
 

@@ -41,6 +41,7 @@ void GuiManager::setup()
 
 
     this->setupGuiParameters();
+    this->setupLayoutGui();
     this->setupNoiseGui();
     this->setupGuiEvents();
     this->loadGuiValues();
@@ -71,6 +72,20 @@ void GuiManager::setupGuiParameters()
     m_gui.addBreak();
 }
 
+void GuiManager::setupLayoutGui()
+{
+    auto starsManager = &AppManager::getInstance().getStarsManager();
+    
+    m_starSize.set("Star Size",  20.0, 0.0, 100.0 );
+    m_starSize.addListener(starsManager, &StarsManager::onSetStarsSize);
+    m_parameters.add(m_starSize);
+    
+    ofxDatGuiFolder* folder = m_gui.addFolder("LAYOUT", ofColor::white);
+    folder->addSlider(m_starSize);
+    folder->expand();
+    m_gui.addBreak();
+}
+
 void GuiManager::setupNoiseGui()
 {
     auto noiseManager = &AppManager::getInstance().getNoiseManager();
@@ -91,9 +106,8 @@ void GuiManager::setupNoiseGui()
     folder->addSlider(m_noiseResolution);
     folder->addSlider(m_noiseFrequency);
     folder->addSlider(m_noiseSpeed);
-    //folder->expand();
+    folder->expand();
     m_gui.addBreak();
-    
 }
 
 void GuiManager::update()
