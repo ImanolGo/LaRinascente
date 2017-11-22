@@ -40,7 +40,7 @@ public:
    //! setups the export image manager
     void update();
     
-    void onSetRecording(bool & value);
+    void onSetRecording(bool value);
     
 private:
     

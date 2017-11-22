@@ -67,7 +67,7 @@ void LayoutManager::setupFbo()
     float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
     
     
-    m_fbo.allocate(width, height, GL_RGBA);
+    m_fbo.allocate(width, height, GL_RGB);
     m_fbo.begin(); ofClear(0); m_fbo.end();
 }
 

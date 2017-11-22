@@ -57,15 +57,15 @@ public:
     }   
     
     void addFrame(ofImage &img){
-        addFrame(img.getPixelsRef());
+        addFrame(img.getPixels());
     }
     
     void addFrame(ofVideoGrabber &cam){
-        addFrame(cam.getPixelsRef());
+        addFrame(cam.getPixels());
     }
     
     void addFrame(ofVideoPlayer &player){
-        addFrame(player.getPixelsRef());
+        addFrame(player.getPixels());
     }
         
     void addFrame(ofPixels imageToSave) {  

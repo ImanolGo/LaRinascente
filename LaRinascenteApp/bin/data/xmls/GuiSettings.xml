@@ -1,6 +1,6 @@
 <group>
-	<Framerate>60</Framerate>
-	<Star_Size>29.21</Star_Size>
+	<Framerate>28</Framerate>
+	<Star_Size>13.48</Star_Size>
 	<Noise_Resolution>64</Noise_Resolution>
 	<Noise_Frequency>0.4</Noise_Frequency>
 	<Noise_Speed>1</Noise_Speed>

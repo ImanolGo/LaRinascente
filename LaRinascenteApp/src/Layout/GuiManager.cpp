@@ -87,6 +87,7 @@ void GuiManager::setupLayoutGui()
     m_parameters.add(m_starSize);
     
     ofxDatGuiFolder* folder = m_gui.addFolder("LAYOUT", ofColor::white);
+    folder->addToggle("RECORD");
     folder->addSlider(m_starSize);
     folder->expand();
     m_gui.addBreak();
@@ -213,9 +214,9 @@ void GuiManager::onToggleEvent(ofxDatGuiToggleEvent e)
 {
     cout << "onToggleEvent: " << e.target->getName() << " Selected" << endl;
     
-    if(e.target->getName() == "Clear")
+    if(e.target->getName() == "RECORD")
     {
-        //AppManager::getInstance().getLightSculptureManager().onClearLights(e.target->getChecked());
+        AppManager::getInstance().getImagesExportManager().onSetRecording(e.target->getChecked());
     }
 }
 
