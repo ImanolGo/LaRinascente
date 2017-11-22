@@ -70,6 +70,9 @@ public:
     //! Returns the stars manager
     StarsManager&  getStarsManager() { return m_starsManager; }
     
+    //! Returns the iamges export manager
+    ImagesExportManager&  getImagesExportManager() { return m_imagesExportManager; }
+    
 
     //==========================================================================
     
@@ -113,6 +116,9 @@ private:
     NoiseManager             m_noiseManager;             ///< Manages the noise generator
     MaskManager              m_maskManager;              ///< Manages all the masks
     StarsManager             m_starsManager;             ///< Manages the stars manager
+    ImagesExportManager      m_imagesExportManager;      ///< Manages the image exporter
+    
+    
     
     bool                     m_debugMode;
     bool                     m_initialized;

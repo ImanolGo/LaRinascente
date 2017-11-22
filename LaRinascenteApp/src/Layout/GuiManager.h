@@ -67,6 +67,8 @@ public:
     
     void onMatrixEvent(ofxDatGuiMatrixEvent e);
     
+    void onSetFrameRate(int& value);
+    
 private:
     
     void setupGuiParameters();
@@ -86,6 +88,7 @@ private:
     ofxDatGui			m_gui;
 
     ofParameter<float>	m_guiFPS;
+    ofParameter<int>    m_framerate;
     
 
     ofParameterGroup      m_parameters;

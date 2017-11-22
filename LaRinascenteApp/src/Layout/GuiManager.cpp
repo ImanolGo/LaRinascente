@@ -69,6 +69,12 @@ void GuiManager::setupGuiParameters()
     
     m_gui.addFRM();
     
+    m_framerate.set("Framerate",  60, 5, 60);
+    m_framerate.addListener(this, &GuiManager::onSetFrameRate);
+    m_parameters.add(m_framerate);
+    
+    m_gui.addSlider(m_framerate);
+    
     m_gui.addBreak();
 }
 
@@ -216,5 +222,11 @@ void GuiManager::onToggleEvent(ofxDatGuiToggleEvent e)
 void GuiManager::onMatrixEvent(ofxDatGuiMatrixEvent e)
 {
     cout << "onMatrixEvent " << e.child << " : " << e.enabled << endl;
+}
+
+void GuiManager::onSetFrameRate(int& value)
+{
+    value = ofClamp(value, 0.0, 60);
+    ofSetFrameRate(value);
 }
 

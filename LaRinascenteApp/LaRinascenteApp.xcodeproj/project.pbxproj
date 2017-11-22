@@ -12,6 +12,7 @@
 		08AC8EF91FC61DA20007083B /* ofxMask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8EF71FC61DA20007083B /* ofxMask.cpp */; };
 		08AC8EFF1FC6274B0007083B /* StarsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8EFB1FC6274A0007083B /* StarsManager.cpp */; };
 		08AC8F001FC6274B0007083B /* Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8EFC1FC6274A0007083B /* Star.cpp */; };
+		08AC8F041FC635000007083B /* ImagesExportManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F021FC634FF0007083B /* ImagesExportManager.cpp */; };
 		1AF15FCF93D2DDD6D4285C8E /* AppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5056FC61E30B9810903B814D /* AppManager.cpp */; };
 		20DD9BBB631FBC0CDCCFA6B6 /* ofTextConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E13F8EA447BEE4F113C15AB /* ofTextConverter.cpp */; };
 		337AAEDF4DCC79FE548A7139 /* ofxFXObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FAE0FD9D5AFB2800EC4B8E8 /* ofxFXObject.cpp */; };
@@ -91,6 +92,8 @@
 		08AC8EFC1FC6274A0007083B /* Star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Star.cpp; path = Visuals/Star.cpp; sourceTree = "<group>"; };
 		08AC8EFD1FC6274A0007083B /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Star.h; path = Visuals/Star.h; sourceTree = "<group>"; };
 		08AC8EFE1FC6274A0007083B /* StarsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarsManager.h; path = Visuals/StarsManager.h; sourceTree = "<group>"; };
+		08AC8F021FC634FF0007083B /* ImagesExportManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImagesExportManager.cpp; path = I0/ImagesExportManager.cpp; sourceTree = "<group>"; };
+		08AC8F031FC635000007083B /* ImagesExportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagesExportManager.h; path = I0/ImagesExportManager.h; sourceTree = "<group>"; };
 		08C5194B0C92DDA2A7539395 /* core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = core.h; path = src/Addons/ofxUnicode/libs/utf8cpp/src/utf8_v2_3_1/source/utf8/core.h; sourceTree = SOURCE_ROOT; };
 		09BB1D7613A1F9D8E8B11D7A /* KeyboardManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = KeyboardManager.h; path = src/I0/KeyboardManager.h; sourceTree = SOURCE_ROOT; };
 		09F8F2DF1D53E65319F30B96 /* LightManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LightManager.cpp; path = src/Engine/3D/LightManager.cpp; sourceTree = SOURCE_ROOT; };
@@ -245,6 +248,8 @@
 			children = (
 				3A260C79069FA7DEF9728CEC /* KeyboardManager.cpp */,
 				09BB1D7613A1F9D8E8B11D7A /* KeyboardManager.h */,
+				08AC8F021FC634FF0007083B /* ImagesExportManager.cpp */,
+				08AC8F031FC635000007083B /* ImagesExportManager.h */,
 			);
 			name = I0;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				447170931C5B41A3FF7A41D5 /* README.md in Sources */,
 				9D3E5A7C189607A50D28E499 /* src_colors.cpp in Sources */,
 				A417B50DA594FBD304CFF2CA /* svgtiny.cpp in Sources */,
+				08AC8F041FC635000007083B /* ImagesExportManager.cpp in Sources */,
 				0466B9E6A55078A9F39B1B4B /* svgtiny_gradient.cpp in Sources */,
 				FCA1CD00EA2BBEEEBA5C4AC9 /* svgtiny_list.cpp in Sources */,
 				E76816EF014518B0B3E83C39 /* ofxSvg.cpp in Sources */,
