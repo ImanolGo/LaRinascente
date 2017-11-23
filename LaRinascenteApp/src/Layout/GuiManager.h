@@ -69,6 +69,10 @@ public:
     
     void onSetFrameRate(int& value);
     
+    void onNextStar();
+    
+    void onPreviousStar();
+    
 private:
     
     void setupGuiParameters();
@@ -91,9 +95,10 @@ private:
     ofParameter<int>    m_framerate;
     
 
-    ofParameterGroup      m_parameters;
+    ofParameterGroup         m_parameters;
     
-    ofParameter<float>        m_starSize;
+    ofParameter<float>       m_starSize;
+    ofParameter<int>         m_currentStar;
     
     ofParameter<int>        m_noiseResolution;
     ofParameter<float>      m_noiseFrequency;

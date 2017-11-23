@@ -15,7 +15,7 @@
 const string StarsManager::STARS_LIST_PATH = "stars/";
 
 
-StarsManager::StarsManager(): Manager(), m_starsSize(20.0)
+StarsManager::StarsManager(): Manager(), m_starsSize(20.0), m_currentStarInde(0)
 {
 	//Intentionally left empty
 }
@@ -207,7 +207,64 @@ void StarsManager::showChannels(bool _showChannels)
     }
 }
 
+void StarsManager::onSetStarPosition(int& value)
+{
+    if(value<0 || value >= m_stars.size()){
+        return;
+    }
+    
+    m_currentStarInde = value;
+}
 
+
+void StarsManager::increaseCurrentX()
+{
+    if(m_currentStarInde<0 || m_currentStarInde >= m_stars.size()){
+        return;
+    }
+    
+    auto currentStar = m_stars[m_currentStarInde];
+    auto position = currentStar->getPosition();
+    position.x+=0.001;
+    currentStar->setPosition(position);
+}
+
+void StarsManager::increaseCurrentY()
+{
+    if(m_currentStarInde<0 || m_currentStarInde >= m_stars.size()){
+        return;
+    }
+    
+    auto currentStar = m_stars[m_currentStarInde];
+    auto position = currentStar->getPosition();
+    position.y+=0.001;
+    currentStar->setPosition(position);
+}
+
+void StarsManager::decreaseCurrentX()
+{
+    if(m_currentStarInde<0 || m_currentStarInde >= m_stars.size()){
+        return;
+    }
+    
+    auto currentStar = m_stars[m_currentStarInde];
+    auto position = currentStar->getPosition();
+    position.x-=0.001;
+    currentStar->setPosition(position);
+    
+}
+
+void StarsManager::decreaseCurrentY()
+{
+    if(m_currentStarInde<0 || m_currentStarInde >= m_stars.size()){
+        return;
+    }
+    
+    auto currentStar = m_stars[m_currentStarInde];
+    auto position = currentStar->getPosition();
+    position.y-=0.001;
+    currentStar->setPosition(position);
+}
 
 
 

@@ -3,9 +3,9 @@
 
   <of_settings>
 
-      <window title="LaRinascenteApp" x="0" y="0" width="640" height="300" fullscreen="0" showCursor="1"/>
-     <!--  <window title="LaRinascenteApp" x="0" y="0" width="2000" height="936" fullscreen="0" showCursor="1"/>
- -->
+    <!--   <window title="LaRinascenteApp" x="0" y="0" width="640" height="300" fullscreen="0" showCursor="1"/> -->
+      <window title="LaRinascenteApp" x="0" y="0" width="2000" height="936" fullscreen="0" showCursor="1"/>
+
 
 
 

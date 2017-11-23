@@ -67,6 +67,16 @@ class StarsManager: public Manager
     
         void showChannels(bool _showChannels);
     
+        void onSetStarPosition(int& value);
+    
+        void increaseCurrentX();
+    
+        void increaseCurrentY();
+    
+        void decreaseCurrentX();
+    
+        void decreaseCurrentY();
+    
     private:
 
         void setupStars();
@@ -87,10 +97,9 @@ class StarsManager: public Manager
     
     private:
     
-    
-    
         StarVector      m_stars;
         ofRectangle     m_boundingBox;
+        int             m_currentStarInde;
     
         float           m_starsSize;
     
