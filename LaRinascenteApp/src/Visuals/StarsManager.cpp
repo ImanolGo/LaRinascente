@@ -85,11 +85,11 @@ void StarsManager::readStarsPositions()
         for (ofBuffer::Line it = buffer.getLines().begin(), end = buffer.getLines().end(); it != end; ++it)
         {
             string line = *it;
-            ofPoint StarPosition;
+            ofPoint starPosition;
             
-            if(parseStarLine(line,StarPosition))
+            if(parseStarLine(line,starPosition))
             {
-                createStar(StarPosition);
+                createStar(starPosition);
             }
             
         }
@@ -100,18 +100,18 @@ void StarsManager::readStarsPositions()
 
 void StarsManager::saveStarsPositions()
 {
-     string Star_position_path = STARS_LIST_PATH + "StarsPositions.txt";
-     ofFile StarPosFile(Star_position_path, ofFile::WriteOnly, true);
+     string star_position_path = STARS_LIST_PATH + "StarsPositions.txt";
+     ofFile starPosFile(star_position_path, ofFile::WriteOnly, true);
     
-    for(auto Star: m_stars)
+    for(auto star: m_stars)
     {
-        ofPoint pos =Star->getPosition();
-        StarPosFile << "{" << pos.x << ", " << pos.y << ", 0.0}" <<std::endl;
+        ofPoint pos = star->getPosition();
+        starPosFile << "{" << pos.x << ", " << pos.y << ", 0.0}" <<std::endl;
     }
     
-    StarPosFile.close();
+    starPosFile.close();
     
-    ofLogNotice() <<"StarsManager::saveStarsPositions -> saved Star positions to file " <<  Star_position_path;
+    ofLogNotice() <<"StarsManager::saveStarsPositions -> saved Star positions to file " <<  star_position_path;
     
 }
 
@@ -152,19 +152,23 @@ void StarsManager::removeCharsFromString( string &str, char* charsToRemove ) {
 
 void StarsManager::update()
 {
-    //
+    auto fbo = AppManager::getInstance().getNoiseManager().getFbo();
+    ofPixels pix;
+    fbo.readToPixels(pix);
+    
+    this->setPixels(pix);
 }
 
-void StarsManager::setPixels(ofPixelsRef pixels)
+void StarsManager::setPixels(ofPixels& pixels)
 {
     this->setStarColors(pixels);
     
 }
 
-void StarsManager::setStarColors(ofPixelsRef pixels)
+void StarsManager::setStarColors(ofPixels& pixels)
 {
-    for(auto Star: m_stars){
-        Star->setPixelColor(pixels);
+    for(auto star: m_stars){
+        star->setPixelColor(pixels);
     }
 }
 
@@ -184,9 +188,9 @@ void StarsManager::draw(int width, int height)
 
 void StarsManager::drawStars(int width, int height)
 {
-    for(auto Star: m_stars)
+    for(auto star: m_stars)
     {
-        Star->draw(width,height);
+        star->draw(width,height);
     }
 }
 
@@ -194,16 +198,16 @@ void StarsManager::onSetStarsSize(float &value)
 {
     m_starsSize = value;
     
-    for(auto Star: m_stars){
-        Star->setWidth(m_starsSize);
+    for(auto star: m_stars){
+        star->setWidth(m_starsSize);
     }
 }
 
 void StarsManager::showChannels(bool _showChannels)
 {
-    for(auto Star: m_stars)
+    for(auto star: m_stars)
     {
-        Star->showId(_showChannels);
+        star->showId(_showChannels);
     }
 }
 

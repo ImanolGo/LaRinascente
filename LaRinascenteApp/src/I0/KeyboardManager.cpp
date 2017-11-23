@@ -55,30 +55,30 @@ void KeyboardManager::keyPressed(ofKeyEventArgs &e)
         //AppManager::getInstance().getLightSculptureManager().onToggleShowIds();
     }
     
-    if(key == OF_KEY_RIGHT) {
-        AppManager::getInstance().getStarsManager().increaseCurrentX();
-    }
-    
-    if(key == OF_KEY_LEFT) {
-        AppManager::getInstance().getStarsManager().decreaseCurrentX();
-    }
-    
-    if(key == OF_KEY_UP) {
-        AppManager::getInstance().getStarsManager().decreaseCurrentY();
-    }
-    
-    if(key == OF_KEY_DOWN) {
-        AppManager::getInstance().getStarsManager().increaseCurrentY();
-    }
-    
-    if(key == 'p') {
-       AppManager::getInstance().getGuiManager().onPreviousStar();
-    }
-    
-    if(key == 'n') {
-        AppManager::getInstance().getGuiManager().onNextStar();
-    }
-    
+//    if(key == OF_KEY_RIGHT) {
+//        AppManager::getInstance().getStarsManager().increaseCurrentX();
+//    }
+//    
+//    if(key == OF_KEY_LEFT) {
+//        AppManager::getInstance().getStarsManager().decreaseCurrentX();
+//    }
+//    
+//    if(key == OF_KEY_UP) {
+//        AppManager::getInstance().getStarsManager().decreaseCurrentY();
+//    }
+//    
+//    if(key == OF_KEY_DOWN) {
+//        AppManager::getInstance().getStarsManager().increaseCurrentY();
+//    }
+//    
+//    if(key == 'p') {
+//       AppManager::getInstance().getGuiManager().onPreviousStar();
+//    }
+//    
+//    if(key == 'n') {
+//        AppManager::getInstance().getGuiManager().onNextStar();
+//    }
+//    
 }
 
 void KeyboardManager::keyReleased(ofKeyEventArgs &e)

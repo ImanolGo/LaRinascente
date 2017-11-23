@@ -33,7 +33,7 @@ public:
     
     void normalize(const ofRectangle& boundingBox);
     
-    void setPixelColor(ofPixelsRef pixels);
+    void setPixelColor(ofPixels& pixels);
     
     void showId(bool _showId) {m_showId = _showId;}
     

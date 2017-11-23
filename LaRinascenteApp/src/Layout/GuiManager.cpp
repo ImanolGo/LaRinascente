@@ -86,14 +86,14 @@ void GuiManager::setupLayoutGui()
     m_starSize.addListener(starsManager, &StarsManager::onSetStarsSize);
     m_parameters.add(m_starSize);
     
-    m_currentStar.set("Current Size",  0, 0, 94);
+    m_currentStar.set("Current Star",  0, 0, 94);
     m_currentStar.addListener(starsManager, &StarsManager::onSetStarPosition);
     m_parameters.add(m_currentStar);
 
     ofxDatGuiFolder* folder = m_gui.addFolder("LAYOUT", ofColor::white);
     folder->addToggle("RECORD");
     folder->addSlider(m_starSize);
-    folder->addSlider(m_currentStar);
+    //folder->addSlider(m_currentStar);
     folder->expand();
     m_gui.addBreak();
 }

@@ -89,13 +89,14 @@ void Star::normalize(const ofRectangle& boundingBox)
 }
 
 
-void Star::setPixelColor(ofPixelsRef pixels)
+void Star::setPixelColor(ofPixels& pixels)
 {
-    m_color = pixels.getColor(m_position.x * pixels.getWidth(), m_position.y * pixels.getHeight());
-    //int brightness = m_color.getBrightness();
+    auto color = pixels.getColor(m_position.x * pixels.getWidth(), m_position.y * pixels.getHeight());
+    int brightness = color.getBrightness();
     //m_color = ofColor( 255, 194, 0);
     //m_color = ofColor::white;
-    //m_color.setBrightness(brightness);
+    m_color.setBrightness(brightness);
+    m_image->setColor(m_color);
     //m_color = ofColor(brightness);
 }
 

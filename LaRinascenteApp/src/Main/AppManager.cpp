@@ -85,6 +85,7 @@ void AppManager::update()
     m_visualEffectsManager.update();
     m_viewManager.update();
     m_noiseManager.update();
+    m_starsManager.update();
     m_guiManager.update();
     m_layoutManager.update();
     m_imagesExportManager.update();

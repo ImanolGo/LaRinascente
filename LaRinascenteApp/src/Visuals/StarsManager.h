@@ -53,9 +53,9 @@ class StarsManager: public Manager
     
         const StarVector& getStars() const {return m_stars;}
     
-        void setPixels(ofPixelsRef pixels);
+        void setPixels(ofPixels& pixels);
     
-        void setStarColors(ofPixelsRef pixels);
+        void setStarColors(ofPixels& pixels);
     
         int getNumberStars() const {return m_stars.size();}
     
