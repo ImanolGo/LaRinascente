@@ -73,12 +73,26 @@ public:
     
     void onPreviousStar();
     
+    void onColorModeChange(const string& colorModeName);
+    
+    void onColorModeChange(int colorModeIndex);
+    
+    void onColorChange(const string& colorPaletteName);
+    
+    void onColorChange(int colorIndex);
+    
+    void onResetColors();
+    
 private:
     
     void setupGuiParameters();
     
     void setupLayoutGui();
     
+    void setupColorModeGui();
+    
+    void setupPaletteGui();
+        
     void setupNoiseGui();
     
     void setupScenesGui();
@@ -105,6 +119,8 @@ private:
     ofParameter<int>        m_noiseResolution;
     ofParameter<float>      m_noiseFrequency;
     ofParameter<float>      m_noiseSpeed;
+    
+    vector<ofColor>         m_colors;
    
     bool        m_showGui;  //It defines the whether the gui should be shown or not
 };

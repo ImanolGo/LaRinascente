@@ -43,9 +43,13 @@ void GuiManager::setup()
     this->setupGuiParameters();
     this->setupScenesGui();
     this->setupLayoutGui();
+    this->setupColorModeGui();
+    this->setupPaletteGui();
     this->setupNoiseGui();
     this->setupGuiEvents();
     this->loadGuiValues();
+    
+    AppManager::getInstance().getGuiManager().onColorModeChange("WARM");
 
     ofLogNotice() <<"GuiManager::initialized";
     
@@ -118,6 +122,44 @@ void GuiManager::setupLayoutGui()
     //folder->addSlider(m_currentStar);
     folder->expand();
     m_gui.addBreak();
+}
+
+
+void GuiManager::setupColorModeGui()
+{
+    vector<string> opts;
+    auto colorModeNames = AppManager::getInstance().getColorManager().getPaletteNames();
+    for(auto colorMode: colorModeNames)
+    {
+        opts.push_back(colorMode);
+    }
+    
+    string label = "COLOR MODE";
+    
+    m_gui.addDropdown(label, opts);
+    auto menu = m_gui.getDropdown(label);
+    menu->expand(); //let's have it open by default
+    menu->setStripeColor(ofColor::greenYellow);
+    for (int i=0; i<menu->size(); i++) menu->getChildAt(i)->setStripeColor(ofColor::greenYellow);
+    m_gui.addBreak();
+}
+
+void GuiManager::setupPaletteGui()
+{
+    // add some color pickers to color our lines //
+    ofxDatGuiFolder* f1 = m_gui.addFolder("PALETTE", ofColor::fromHex(0x2FA1D6));
+    
+    int numColors = AppManager::getInstance().getColorManager().getMaxNumberOfColors();
+    for(int i = 0; i < numColors; i++)
+    {
+        auto color = AppManager::getInstance().getColorManager().getColor(i);
+        ofColor c(color->r, color->g, color->b);
+        string colorName = "COLOR " + ofToString(i);
+        f1->addColorPicker(colorName);
+    }
+    f1->expand();
+    m_gui.addBreak();
+    
 }
 
 void GuiManager::setupNoiseGui()
@@ -205,6 +247,26 @@ void GuiManager::drawRectangle()
     ofPopStyle();
 }
 
+void GuiManager::onResetColors()
+{
+    int numColors = AppManager::getInstance().getColorManager().getMaxNumberOfColors();
+    for(int i = 0; i < numColors; i++)
+    {
+        string colorName = "COLOR " + ofToString(i);
+        m_gui.getColorPicker(colorName)->setVisible(false);
+    }
+    
+    numColors = AppManager::getInstance().getColorManager().getNumberOfColors();
+    for(int i = 0; i < numColors; i++)
+    {
+        auto color = AppManager::getInstance().getColorManager().getColor(i);
+        ofColor c(color->r, color->g, color->b);
+        string colorName = "COLOR " + ofToString(i);
+        m_gui.getColorPicker(colorName)->setVisible(true);
+        m_gui.getColorPicker(colorName)->setColor(c);
+    }
+}
+
 
 
 void GuiManager::onDropdownEvent(ofxDatGuiDropdownEvent e)
@@ -216,6 +278,13 @@ void GuiManager::onDropdownEvent(ofxDatGuiDropdownEvent e)
         AppManager::getInstance().getSceneManager().changeScene(e.child);
         m_gui.getDropdown(e.target->getName())->expand();
         m_gui.getDropdown(e.target->getName())->setLabel("SCENES:" + e.target->getLabel());
+    }
+    
+    else if(e.target->getName() == "COLOR MODE")
+    {
+        AppManager::getInstance().getColorManager().changeColorPalette(e.target->getLabel());
+        //m_gui.getDropdown(e.target->getName())->expand();
+        m_gui.getDropdown(e.target->getName())->setLabel("COLOR MODE: " + e.target->getLabel());
     }
 }
 
@@ -274,3 +343,39 @@ void GuiManager::onPreviousStar()
     m_currentStar = ofClamp(m_currentStar, m_currentStar.getMin(), m_currentStar.getMax());
 }
 
+void GuiManager::onColorChange(const string& colorPaletteName)
+{
+    int index = AppManager::getInstance().getColorManager().getIndex(colorPaletteName);
+    this->onColorChange(index);
+}
+
+void GuiManager::onColorChange(int colorIndex)
+{
+    string dropBoxName = "COLOR PALETTES";
+    auto menu = m_gui.getDropdown(dropBoxName);
+    menu->select(colorIndex);
+    string label =  menu->getChildAt(colorIndex)->getLabel();
+    menu->setLabel("PALETTE:" + label);
+    AppManager::getInstance().getColorManager().changeColorPalette(colorIndex);
+    
+}
+
+void GuiManager::onColorModeChange(const string &colorModeName)
+{
+    int index = AppManager::getInstance().getColorManager().getIndex(colorModeName);
+    this->onColorModeChange(index);
+}
+
+void GuiManager::onColorModeChange(int colorModeIndex)
+{
+    if(colorModeIndex<0){
+        return;
+    }
+    
+    string dropBoxName = "COLOR MODE";
+    auto menu = m_gui.getDropdown(dropBoxName);
+    menu->select(colorModeIndex);
+    string label =  menu->getChildAt(colorModeIndex)->getLabel();
+    menu->setLabel(dropBoxName + ": " + label);
+    AppManager::getInstance().getColorManager().changeColorPalette(label);
+}

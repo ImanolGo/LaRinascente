@@ -19,6 +19,7 @@
 
     <texture name="FACADE" path="images/general/LaRinascenteFacade.png"/>
     <texture name="STAR" path="images/general/star_small.png"/>
+    <texture name="EXPLOSION" path="images/general/explosion2.png"/>
 
   </textures>
 
@@ -33,6 +34,20 @@
     <color  name="GUI1" r="160" g="160" b="80" a="200"/>
     <color  name="GUI2" r="80" g="160" b="160" a="200"/>
     <color  name="RecordingColor" r="170" g="0" b="0" a="255"/>
+
+    <palette name = "WARM">
+      <color name="Amber" hex="0xffcd74"/>
+      <color name="Moccasin" hex="0xfcecbc"/>
+      <color name="Orange" hex="0xff7251"/>
+      <color name="Indian Red" hex="0x9b2948"/>
+    </palette>
+
+     <palette name = "COLD">
+      <color name="Lavender" hex="0xecf4fc"/>
+      <color name="Medium Turquoise" hex="0x64b0dc"/>
+      <color name="Light Slate Gray" hex="0x9c7cb4"/>
+      <color name="Light Steel Blue" hex="0xccb4d4"/>
+    </palette>
 
   </colors>
 

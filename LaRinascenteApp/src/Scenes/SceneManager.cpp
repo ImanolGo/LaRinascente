@@ -48,13 +48,15 @@ void SceneManager::createScenes()
     
     ofPtr<ofxScene> scene;
 
+    //Create Stars Scene
+    scene = ofPtr<ofxScene> (new StarsScene());
+    m_mySceneManager.addScene(scene);
+    
     //Create Blank Scene
     scene = ofPtr<ofxScene> (new BlankScene());
     m_mySceneManager.addScene(scene);
     
-    //Create Stars Scene
-    scene = ofPtr<ofxScene> (new StarsScene());
-    m_mySceneManager.addScene(scene);
+   
     
     float width = AppManager::getInstance().getSettingsManager().getAppWidth();
     float height = AppManager::getInstance().getSettingsManager().getAppHeight();

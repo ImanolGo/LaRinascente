@@ -22,4 +22,5 @@
 #include "StarsManager.h"
 #include "ImagesExportManager.h"
 #include "SceneManager.h"
+#include "ColorManager.h"
 

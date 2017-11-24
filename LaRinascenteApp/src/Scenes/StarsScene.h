@@ -9,6 +9,7 @@
 #pragma once
 
 #include "ofxScene.h"
+#include "ExplosionVisual.h"
 
 class StarsScene : public ofxScene {
     
@@ -43,8 +44,15 @@ public:
     
 private:
     
+    void setupExplosions();
+    
+    void updateExplosions();
+    
+    void drawExplosions();
 
 private:
+    
+    ExplosionVisual         m_explosionsVisual;
     
     
 };

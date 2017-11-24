@@ -68,6 +68,7 @@ void AppManager::setupManagers()
     m_resourceManager.setup();
     m_viewManager.setup();
     m_visualEffectsManager.setup();
+    m_colorManager.setup();
     m_maskManager.setup();
     m_layoutManager.setup();
     m_starsManager.setup();

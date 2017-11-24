@@ -23,24 +23,62 @@ StarsScene::~StarsScene()
 
 void StarsScene::setup() {
     ofLogNotice(getName() + "::setup");
+    this->setupExplosions();
 }
 
 
+void StarsScene::setupExplosions()
+{
+    float width = AppManager::getInstance().getSettingsManager().getAppWidth();
+    float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
+    
+    m_explosionsVisual.setup(width, height);
+}
 
 void StarsScene::update()
 {
-    //Empty
+    this->updateExplosions();
+}
+
+
+void StarsScene::updateExplosions()
+{
+    float width = AppManager::getInstance().getSettingsManager().getAppWidth();
+    float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
+    
+    auto stars = AppManager::getInstance().getStarsManager().getStars();
+    auto star = stars[ofRandom(stars.size())];
+    
+    
+    ofPoint pos = ofPoint(star->getPosition().x*width, star->getPosition().y*height);
+    m_explosionsVisual.addParticle(pos);
+    
+    m_explosionsVisual.update();
 }
 
 void StarsScene::draw()
 {
     ofBackground(0,0,0);
     AppManager::getInstance().getStarsManager().draw();
+    
+    ofClear(0, 0, 0);
+    ofPushStyle();
+    ofEnableBlendMode(OF_BLENDMODE_DISABLED);
+    
+        AppManager::getInstance().getStarsManager().draw();
+    
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
+    
+        m_explosionsVisual.draw();
+    
+    ofPopStyle();
+    
 }
 
 
 void StarsScene::willFadeIn() {
     ofLogNotice("StarsScene::willFadeIn");
+   // AppManager::getInstance().getGuiManager().onColorModeChange("WARM");
 }
 
 void StarsScene::willDraw() {

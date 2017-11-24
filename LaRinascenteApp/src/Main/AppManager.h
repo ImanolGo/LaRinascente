@@ -76,6 +76,10 @@ public:
     //! Returns the scene manager
     SceneManager&  getSceneManager() { return m_sceneManager; }
     
+    //! Returns the color manager
+    ColorManager&  getColorManager() { return m_colorManager; }
+    
+    
 
     //==========================================================================
     
@@ -121,6 +125,7 @@ private:
     StarsManager             m_starsManager;             ///< Manages the stars manager
     ImagesExportManager      m_imagesExportManager;      ///< Manages the image exporter
     SceneManager             m_sceneManager;             ///< Manages the scenes
+    ColorManager             m_colorManager;             ///< Manages the colors
     
     
     
