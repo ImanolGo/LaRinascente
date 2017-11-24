@@ -81,6 +81,8 @@ private:
     
     void setupNoiseGui();
     
+    void setupScenesGui();
+    
     void drawRectangle();
     
     void drawGui();

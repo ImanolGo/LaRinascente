@@ -13,6 +13,25 @@
 		08AC8EFF1FC6274B0007083B /* StarsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8EFB1FC6274A0007083B /* StarsManager.cpp */; };
 		08AC8F001FC6274B0007083B /* Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8EFC1FC6274A0007083B /* Star.cpp */; };
 		08AC8F041FC635000007083B /* ImagesExportManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F021FC634FF0007083B /* ImagesExportManager.cpp */; };
+		08AC8F141FC81DF10007083B /* ImageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F0B1FC81DF10007083B /* ImageScene.cpp */; };
+		08AC8F151FC81DF10007083B /* VideoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F0D1FC81DF10007083B /* VideoScene.cpp */; };
+		08AC8F161FC81DF10007083B /* BlankScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F0F1FC81DF10007083B /* BlankScene.cpp */; };
+		08AC8F171FC81DF10007083B /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F111FC81DF10007083B /* SceneManager.cpp */; };
+		08AC8F1A1FC81E750007083B /* StarsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F181FC81E740007083B /* StarsScene.cpp */; };
+		08AC8F201FC81ED40007083B /* ofxSceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F1F1FC81ED30007083B /* ofxSceneManager.cpp */; };
+		08AC8F251FC81EED0007083B /* ofxTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F231FC81EED0007083B /* ofxTween.cpp */; };
+		08AC8F3F1FC81EFD0007083B /* ofxEasingBounce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F271FC81EFC0007083B /* ofxEasingBounce.cpp */; };
+		08AC8F401FC81EFD0007083B /* ofxEasingQuint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F2B1FC81EFC0007083B /* ofxEasingQuint.cpp */; };
+		08AC8F411FC81EFD0007083B /* ofxEasingLinear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F2C1FC81EFC0007083B /* ofxEasingLinear.cpp */; };
+		08AC8F421FC81EFD0007083B /* ofxEasingElastic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F2E1FC81EFC0007083B /* ofxEasingElastic.cpp */; };
+		08AC8F431FC81EFD0007083B /* ofxEasingSine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F2F1FC81EFC0007083B /* ofxEasingSine.cpp */; };
+		08AC8F441FC81EFD0007083B /* ofxEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F321FC81EFD0007083B /* ofxEasing.cpp */; };
+		08AC8F451FC81EFD0007083B /* ofxEasingBack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F331FC81EFD0007083B /* ofxEasingBack.cpp */; };
+		08AC8F461FC81EFD0007083B /* ofxEasingExpo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F341FC81EFD0007083B /* ofxEasingExpo.cpp */; };
+		08AC8F471FC81EFD0007083B /* ofxEasingQuart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F381FC81EFD0007083B /* ofxEasingQuart.cpp */; };
+		08AC8F481FC81EFD0007083B /* ofxEasingCubic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F391FC81EFD0007083B /* ofxEasingCubic.cpp */; };
+		08AC8F491FC81EFD0007083B /* ofxEasingCirc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F3D1FC81EFD0007083B /* ofxEasingCirc.cpp */; };
+		08AC8F4A1FC81EFD0007083B /* ofxEasingQuad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08AC8F3E1FC81EFD0007083B /* ofxEasingQuad.cpp */; };
 		1AF15FCF93D2DDD6D4285C8E /* AppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5056FC61E30B9810903B814D /* AppManager.cpp */; };
 		20DD9BBB631FBC0CDCCFA6B6 /* ofTextConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E13F8EA447BEE4F113C15AB /* ofTextConverter.cpp */; };
 		337AAEDF4DCC79FE548A7139 /* ofxFXObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FAE0FD9D5AFB2800EC4B8E8 /* ofxFXObject.cpp */; };
@@ -94,6 +113,46 @@
 		08AC8EFE1FC6274A0007083B /* StarsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarsManager.h; path = Visuals/StarsManager.h; sourceTree = "<group>"; };
 		08AC8F021FC634FF0007083B /* ImagesExportManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImagesExportManager.cpp; path = I0/ImagesExportManager.cpp; sourceTree = "<group>"; };
 		08AC8F031FC635000007083B /* ImagesExportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagesExportManager.h; path = I0/ImagesExportManager.h; sourceTree = "<group>"; };
+		08AC8F0B1FC81DF10007083B /* ImageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImageScene.cpp; path = Scenes/ImageScene.cpp; sourceTree = "<group>"; };
+		08AC8F0C1FC81DF10007083B /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneManager.h; path = Scenes/SceneManager.h; sourceTree = "<group>"; };
+		08AC8F0D1FC81DF10007083B /* VideoScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoScene.cpp; path = Scenes/VideoScene.cpp; sourceTree = "<group>"; };
+		08AC8F0E1FC81DF10007083B /* ImageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageScene.h; path = Scenes/ImageScene.h; sourceTree = "<group>"; };
+		08AC8F0F1FC81DF10007083B /* BlankScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlankScene.cpp; path = Scenes/BlankScene.cpp; sourceTree = "<group>"; };
+		08AC8F101FC81DF10007083B /* BlankScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlankScene.h; path = Scenes/BlankScene.h; sourceTree = "<group>"; };
+		08AC8F111FC81DF10007083B /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneManager.cpp; path = Scenes/SceneManager.cpp; sourceTree = "<group>"; };
+		08AC8F121FC81DF10007083B /* VideoScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoScene.h; path = Scenes/VideoScene.h; sourceTree = "<group>"; };
+		08AC8F131FC81DF10007083B /* scenes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scenes.h; path = Scenes/scenes.h; sourceTree = "<group>"; };
+		08AC8F181FC81E740007083B /* StarsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StarsScene.cpp; path = Scenes/StarsScene.cpp; sourceTree = "<group>"; };
+		08AC8F191FC81E740007083B /* StarsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarsScene.h; path = Scenes/StarsScene.h; sourceTree = "<group>"; };
+		08AC8F1D1FC81ED30007083B /* ofxSceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSceneManager.h; path = Addons/ofxSceneManager/src/ofxSceneManager.h; sourceTree = "<group>"; };
+		08AC8F1E1FC81ED30007083B /* ofxScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxScene.h; path = Addons/ofxSceneManager/src/ofxScene.h; sourceTree = "<group>"; };
+		08AC8F1F1FC81ED30007083B /* ofxSceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSceneManager.cpp; path = Addons/ofxSceneManager/src/ofxSceneManager.cpp; sourceTree = "<group>"; };
+		08AC8F231FC81EED0007083B /* ofxTween.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxTween.cpp; path = Addons/ofxTween/src/ofxTween.cpp; sourceTree = "<group>"; };
+		08AC8F241FC81EED0007083B /* ofxTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxTween.h; path = Addons/ofxTween/src/ofxTween.h; sourceTree = "<group>"; };
+		08AC8F271FC81EFC0007083B /* ofxEasingBounce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingBounce.cpp; path = Addons/ofxTween/src/Easings/ofxEasingBounce.cpp; sourceTree = "<group>"; };
+		08AC8F281FC81EFC0007083B /* ofxEasingCubic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingCubic.h; path = Addons/ofxTween/src/Easings/ofxEasingCubic.h; sourceTree = "<group>"; };
+		08AC8F291FC81EFC0007083B /* ofxEasingElastic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingElastic.h; path = Addons/ofxTween/src/Easings/ofxEasingElastic.h; sourceTree = "<group>"; };
+		08AC8F2A1FC81EFC0007083B /* ofxEasingBounce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingBounce.h; path = Addons/ofxTween/src/Easings/ofxEasingBounce.h; sourceTree = "<group>"; };
+		08AC8F2B1FC81EFC0007083B /* ofxEasingQuint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingQuint.cpp; path = Addons/ofxTween/src/Easings/ofxEasingQuint.cpp; sourceTree = "<group>"; };
+		08AC8F2C1FC81EFC0007083B /* ofxEasingLinear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingLinear.cpp; path = Addons/ofxTween/src/Easings/ofxEasingLinear.cpp; sourceTree = "<group>"; };
+		08AC8F2D1FC81EFC0007083B /* ofxEasingQuint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingQuint.h; path = Addons/ofxTween/src/Easings/ofxEasingQuint.h; sourceTree = "<group>"; };
+		08AC8F2E1FC81EFC0007083B /* ofxEasingElastic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingElastic.cpp; path = Addons/ofxTween/src/Easings/ofxEasingElastic.cpp; sourceTree = "<group>"; };
+		08AC8F2F1FC81EFC0007083B /* ofxEasingSine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingSine.cpp; path = Addons/ofxTween/src/Easings/ofxEasingSine.cpp; sourceTree = "<group>"; };
+		08AC8F301FC81EFC0007083B /* ofxEasingSine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingSine.h; path = Addons/ofxTween/src/Easings/ofxEasingSine.h; sourceTree = "<group>"; };
+		08AC8F311FC81EFC0007083B /* ofxEasingCirc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingCirc.h; path = Addons/ofxTween/src/Easings/ofxEasingCirc.h; sourceTree = "<group>"; };
+		08AC8F321FC81EFD0007083B /* ofxEasing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasing.cpp; path = Addons/ofxTween/src/Easings/ofxEasing.cpp; sourceTree = "<group>"; };
+		08AC8F331FC81EFD0007083B /* ofxEasingBack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingBack.cpp; path = Addons/ofxTween/src/Easings/ofxEasingBack.cpp; sourceTree = "<group>"; };
+		08AC8F341FC81EFD0007083B /* ofxEasingExpo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingExpo.cpp; path = Addons/ofxTween/src/Easings/ofxEasingExpo.cpp; sourceTree = "<group>"; };
+		08AC8F351FC81EFD0007083B /* ofxEasingQuart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingQuart.h; path = Addons/ofxTween/src/Easings/ofxEasingQuart.h; sourceTree = "<group>"; };
+		08AC8F361FC81EFD0007083B /* ofxEasingBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingBack.h; path = Addons/ofxTween/src/Easings/ofxEasingBack.h; sourceTree = "<group>"; };
+		08AC8F371FC81EFD0007083B /* ofxEasingLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingLinear.h; path = Addons/ofxTween/src/Easings/ofxEasingLinear.h; sourceTree = "<group>"; };
+		08AC8F381FC81EFD0007083B /* ofxEasingQuart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingQuart.cpp; path = Addons/ofxTween/src/Easings/ofxEasingQuart.cpp; sourceTree = "<group>"; };
+		08AC8F391FC81EFD0007083B /* ofxEasingCubic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingCubic.cpp; path = Addons/ofxTween/src/Easings/ofxEasingCubic.cpp; sourceTree = "<group>"; };
+		08AC8F3A1FC81EFD0007083B /* ofxEasingExpo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingExpo.h; path = Addons/ofxTween/src/Easings/ofxEasingExpo.h; sourceTree = "<group>"; };
+		08AC8F3B1FC81EFD0007083B /* ofxEasingQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasingQuad.h; path = Addons/ofxTween/src/Easings/ofxEasingQuad.h; sourceTree = "<group>"; };
+		08AC8F3C1FC81EFD0007083B /* ofxEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxEasing.h; path = Addons/ofxTween/src/Easings/ofxEasing.h; sourceTree = "<group>"; };
+		08AC8F3D1FC81EFD0007083B /* ofxEasingCirc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingCirc.cpp; path = Addons/ofxTween/src/Easings/ofxEasingCirc.cpp; sourceTree = "<group>"; };
+		08AC8F3E1FC81EFD0007083B /* ofxEasingQuad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxEasingQuad.cpp; path = Addons/ofxTween/src/Easings/ofxEasingQuad.cpp; sourceTree = "<group>"; };
 		08C5194B0C92DDA2A7539395 /* core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = core.h; path = src/Addons/ofxUnicode/libs/utf8cpp/src/utf8_v2_3_1/source/utf8/core.h; sourceTree = SOURCE_ROOT; };
 		09BB1D7613A1F9D8E8B11D7A /* KeyboardManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = KeyboardManager.h; path = src/I0/KeyboardManager.h; sourceTree = SOURCE_ROOT; };
 		09F8F2DF1D53E65319F30B96 /* LightManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LightManager.cpp; path = src/Engine/3D/LightManager.cpp; sourceTree = SOURCE_ROOT; };
@@ -269,6 +328,91 @@
 				08AC8EF81FC61DA20007083B /* ofxMask.h */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		08AC8F0A1FC81DD70007083B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				08AC8F0F1FC81DF10007083B /* BlankScene.cpp */,
+				08AC8F101FC81DF10007083B /* BlankScene.h */,
+				08AC8F181FC81E740007083B /* StarsScene.cpp */,
+				08AC8F191FC81E740007083B /* StarsScene.h */,
+				08AC8F0B1FC81DF10007083B /* ImageScene.cpp */,
+				08AC8F0E1FC81DF10007083B /* ImageScene.h */,
+				08AC8F111FC81DF10007083B /* SceneManager.cpp */,
+				08AC8F0C1FC81DF10007083B /* SceneManager.h */,
+				08AC8F131FC81DF10007083B /* scenes.h */,
+				08AC8F0D1FC81DF10007083B /* VideoScene.cpp */,
+				08AC8F121FC81DF10007083B /* VideoScene.h */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		08AC8F1B1FC81EB60007083B /* ofxSceneManager */ = {
+			isa = PBXGroup;
+			children = (
+				08AC8F1C1FC81EBB0007083B /* src */,
+			);
+			name = ofxSceneManager;
+			sourceTree = "<group>";
+		};
+		08AC8F1C1FC81EBB0007083B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				08AC8F1E1FC81ED30007083B /* ofxScene.h */,
+				08AC8F1F1FC81ED30007083B /* ofxSceneManager.cpp */,
+				08AC8F1D1FC81ED30007083B /* ofxSceneManager.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		08AC8F211FC81EDA0007083B /* ofxTween */ = {
+			isa = PBXGroup;
+			children = (
+				08AC8F221FC81EE10007083B /* src */,
+			);
+			name = ofxTween;
+			sourceTree = "<group>";
+		};
+		08AC8F221FC81EE10007083B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				08AC8F261FC81EF20007083B /* Easings */,
+				08AC8F231FC81EED0007083B /* ofxTween.cpp */,
+				08AC8F241FC81EED0007083B /* ofxTween.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		08AC8F261FC81EF20007083B /* Easings */ = {
+			isa = PBXGroup;
+			children = (
+				08AC8F321FC81EFD0007083B /* ofxEasing.cpp */,
+				08AC8F3C1FC81EFD0007083B /* ofxEasing.h */,
+				08AC8F331FC81EFD0007083B /* ofxEasingBack.cpp */,
+				08AC8F361FC81EFD0007083B /* ofxEasingBack.h */,
+				08AC8F271FC81EFC0007083B /* ofxEasingBounce.cpp */,
+				08AC8F2A1FC81EFC0007083B /* ofxEasingBounce.h */,
+				08AC8F3D1FC81EFD0007083B /* ofxEasingCirc.cpp */,
+				08AC8F311FC81EFC0007083B /* ofxEasingCirc.h */,
+				08AC8F391FC81EFD0007083B /* ofxEasingCubic.cpp */,
+				08AC8F281FC81EFC0007083B /* ofxEasingCubic.h */,
+				08AC8F2E1FC81EFC0007083B /* ofxEasingElastic.cpp */,
+				08AC8F291FC81EFC0007083B /* ofxEasingElastic.h */,
+				08AC8F341FC81EFD0007083B /* ofxEasingExpo.cpp */,
+				08AC8F3A1FC81EFD0007083B /* ofxEasingExpo.h */,
+				08AC8F2C1FC81EFC0007083B /* ofxEasingLinear.cpp */,
+				08AC8F371FC81EFD0007083B /* ofxEasingLinear.h */,
+				08AC8F3E1FC81EFD0007083B /* ofxEasingQuad.cpp */,
+				08AC8F3B1FC81EFD0007083B /* ofxEasingQuad.h */,
+				08AC8F381FC81EFD0007083B /* ofxEasingQuart.cpp */,
+				08AC8F351FC81EFD0007083B /* ofxEasingQuart.h */,
+				08AC8F2B1FC81EFC0007083B /* ofxEasingQuint.cpp */,
+				08AC8F2D1FC81EFC0007083B /* ofxEasingQuint.h */,
+				08AC8F2F1FC81EFC0007083B /* ofxEasingSine.cpp */,
+				08AC8F301FC81EFC0007083B /* ofxEasingSine.h */,
+			);
+			name = Easings;
 			sourceTree = "<group>";
 		};
 		1646F71220FE0F0638559519 /* 3D */ = {
@@ -573,6 +717,8 @@
 		AD642137CCDF61FB3E6CCEA2 /* Addons */ = {
 			isa = PBXGroup;
 			children = (
+				08AC8F211FC81EDA0007083B /* ofxTween */,
+				08AC8F1B1FC81EB60007083B /* ofxSceneManager */,
 				08AC8EF51FC61D920007083B /* ofxMask */,
 				74A312B2568D421CAAEF740A /* ofxDatGui */,
 				D9F7CAC7D21A1FED92DCF13D /* ofxFX */,
@@ -736,6 +882,7 @@
 				AD642137CCDF61FB3E6CCEA2 /* Addons */,
 				E2C62C2B4F591B9A20DAF22A /* Engine */,
 				0564C083037E0848473DDC94 /* I0 */,
+				08AC8F0A1FC81DD70007083B /* Scenes */,
 				375D8B140B52B55EB32EB487 /* Layout */,
 				AF4FDCF7E02C59FCC5FE54A2 /* Main */,
 				C02C33831C66F04FEBAE29DE /* Visuals */,
@@ -865,15 +1012,27 @@
 				059F15A57C00F89CF43FDDD6 /* ofxSmartFont.cpp in Sources */,
 				49EE14834E328B244122B5DE /* ofxDatGui.cpp in Sources */,
 				337AAEDF4DCC79FE548A7139 /* ofxFXObject.cpp in Sources */,
+				08AC8F161FC81DF10007083B /* BlankScene.cpp in Sources */,
 				447170931C5B41A3FF7A41D5 /* README.md in Sources */,
 				9D3E5A7C189607A50D28E499 /* src_colors.cpp in Sources */,
+				08AC8F471FC81EFD0007083B /* ofxEasingQuart.cpp in Sources */,
 				A417B50DA594FBD304CFF2CA /* svgtiny.cpp in Sources */,
 				08AC8F041FC635000007083B /* ImagesExportManager.cpp in Sources */,
+				08AC8F151FC81DF10007083B /* VideoScene.cpp in Sources */,
 				0466B9E6A55078A9F39B1B4B /* svgtiny_gradient.cpp in Sources */,
+				08AC8F201FC81ED40007083B /* ofxSceneManager.cpp in Sources */,
+				08AC8F251FC81EED0007083B /* ofxTween.cpp in Sources */,
 				FCA1CD00EA2BBEEEBA5C4AC9 /* svgtiny_list.cpp in Sources */,
+				08AC8F431FC81EFD0007083B /* ofxEasingSine.cpp in Sources */,
+				08AC8F441FC81EFD0007083B /* ofxEasing.cpp in Sources */,
 				E76816EF014518B0B3E83C39 /* ofxSvg.cpp in Sources */,
+				08AC8F171FC81DF10007083B /* SceneManager.cpp in Sources */,
+				08AC8F411FC81EFD0007083B /* ofxEasingLinear.cpp in Sources */,
+				08AC8F481FC81EFD0007083B /* ofxEasingCubic.cpp in Sources */,
+				08AC8F141FC81DF10007083B /* ImageScene.cpp in Sources */,
 				20DD9BBB631FBC0CDCCFA6B6 /* ofTextConverter.cpp in Sources */,
 				7E78555D595408C86F902937 /* ofUnicode.cpp in Sources */,
+				08AC8F4A1FC81EFD0007083B /* ofxEasingQuad.cpp in Sources */,
 				EC108074DB75C3CD93A7DADF /* ofUTF8.cpp in Sources */,
 				48F94177806B5CB8D3C0F283 /* CameraAnimations.cpp in Sources */,
 				C6B3BFC2668F137F745DC3C6 /* CameraAnimationsManager.cpp in Sources */,
@@ -890,17 +1049,24 @@
 				E66F471FC218F559192473CB /* VideoVisual.cpp in Sources */,
 				9D9E0E996DA1B9AC9952C889 /* ViewManager.cpp in Sources */,
 				875651AF8693D3DE4CC23485 /* VisualEffects.cpp in Sources */,
+				08AC8F3F1FC81EFD0007083B /* ofxEasingBounce.cpp in Sources */,
 				B790DA4F42194210B9259E42 /* VisualEffectsManager.cpp in Sources */,
 				5152A5DBF51A461014A1F631 /* KeyboardManager.cpp in Sources */,
 				5D33A9513B2A4C6DBD3188C7 /* GuiManager.cpp in Sources */,
 				93510377552D47B6620A7586 /* LayoutManager.cpp in Sources */,
 				E79CB8C17D289FDF08DFD821 /* MaskManager.cpp in Sources */,
 				1AF15FCF93D2DDD6D4285C8E /* AppManager.cpp in Sources */,
+				08AC8F1A1FC81E750007083B /* StarsScene.cpp in Sources */,
+				08AC8F401FC81EFD0007083B /* ofxEasingQuint.cpp in Sources */,
+				08AC8F491FC81EFD0007083B /* ofxEasingCirc.cpp in Sources */,
 				70A6DCB87BB82B1478EE69BB /* LaRinascenteApp.cpp in Sources */,
 				DA22DA3A4F2E611DF50078F2 /* main.cpp in Sources */,
+				08AC8F461FC81EFD0007083B /* ofxEasingExpo.cpp in Sources */,
 				58BCEB4034B30CB4A3456FC7 /* SettingsManager.cpp in Sources */,
 				08AC8EFF1FC6274B0007083B /* StarsManager.cpp in Sources */,
+				08AC8F421FC81EFD0007083B /* ofxEasingElastic.cpp in Sources */,
 				F7A839F9196EBBBCA98E0555 /* NoiseManager.cpp in Sources */,
+				08AC8F451FC81EFD0007083B /* ofxEasingBack.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

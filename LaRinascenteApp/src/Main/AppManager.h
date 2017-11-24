@@ -73,6 +73,9 @@ public:
     //! Returns the iamges export manager
     ImagesExportManager&  getImagesExportManager() { return m_imagesExportManager; }
     
+    //! Returns the scene manager
+    SceneManager&  getSceneManager() { return m_sceneManager; }
+    
 
     //==========================================================================
     
@@ -117,6 +120,7 @@ private:
     MaskManager              m_maskManager;              ///< Manages all the masks
     StarsManager             m_starsManager;             ///< Manages the stars manager
     ImagesExportManager      m_imagesExportManager;      ///< Manages the image exporter
+    SceneManager             m_sceneManager;             ///< Manages the scenes
     
     
     

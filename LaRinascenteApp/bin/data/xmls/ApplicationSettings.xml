@@ -32,7 +32,7 @@
     <color  name="GUI_Fill" r="160" g="160" b="160" a="160"/>
     <color  name="GUI1" r="160" g="160" b="80" a="200"/>
     <color  name="GUI2" r="80" g="160" b="160" a="200"/>
-    <color  name="FrameRectangle" r="90" g="95" b="103" a="255"/>
+    <color  name="RecordingColor" r="170" g="0" b="0" a="255"/>
 
   </colors>
 

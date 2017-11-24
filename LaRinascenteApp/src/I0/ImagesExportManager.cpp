@@ -48,6 +48,7 @@ void ImagesExportManager::setupRecorder()
 void ImagesExportManager::update()
 {
     this->updateRecorder();
+    this->updateText();
 }
 
 void ImagesExportManager::updateRecorder()
@@ -56,10 +57,16 @@ void ImagesExportManager::updateRecorder()
         auto fbo = AppManager::getInstance().getLayoutManager().getFbo();
         ofPixels pixels;
         fbo.readToPixels(pixels);
-        ofLogNotice() <<"ImagesExportManager::updateRecorder -> pixels width =  " << pixels.getWidth();
+        //ofLogNotice() <<"ImagesExportManager::updateRecorder -> pixels width =  " << pixels.getWidth();
         m_recorder.addFrame(pixels);
     }
 }
+
+void ImagesExportManager::updateText()
+{
+    string text = "Queue Size: " + ofToString(m_recorder.q.size());
+    AppManager::getInstance().getLayoutManager().setFrameText(text);
+}   
 
 void ImagesExportManager::onSetRecording(bool value)
 {

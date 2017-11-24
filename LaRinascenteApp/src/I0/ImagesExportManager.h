@@ -42,11 +42,15 @@ public:
     
     void onSetRecording(bool value);
     
+    bool isRecording() const {return m_recording;}
+    
 private:
     
     void setupRecorder();
     
     void updateRecorder();
+    
+    void updateText();
 
 private:
     

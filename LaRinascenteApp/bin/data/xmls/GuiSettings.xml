@@ -1,5 +1,5 @@
 <group>
-	<Framerate>28</Framerate>
+	<Framerate>60</Framerate>
 	<Star_Size>41.01</Star_Size>
 	<Current_Star>0</Current_Star>
 	<Noise_Resolution>72</Noise_Resolution>

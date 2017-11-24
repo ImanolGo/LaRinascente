@@ -117,12 +117,19 @@ void LayoutManager::setupWindowFrames()
 {
     this->resetWindowRects();
     this->resetWindowFrames();
+
     
     float width = ofGetScreenWidth();
-    float height = ofGetScreenHeight()/80;
+    float height = m_textVisuals["Frames"]->getHeight() + 10;
 
     ofColor color = AppManager::getInstance().getSettingsManager().getColor("FrameRectangle");
     m_windowFrame.setColor(color);
+    
+    
+    m_recordingFrame.setWidth(width); m_recordingFrame.setHeight(height);
+    
+    color = AppManager::getInstance().getSettingsManager().getColor("RecordingColor");
+    m_recordingFrame.setColor(color);
 }
 
 void LayoutManager::resetWindowFrames()
@@ -147,14 +154,14 @@ void LayoutManager::updateFbos()
     ofEnableAlphaBlending();
     m_fbo.begin();
         ofClear(0, 0, 0);
-        m_mask.begin();
-            AppManager::getInstance().getStarsManager().draw();
-        m_mask.end();
+//        m_mask.begin();
+//            AppManager::getInstance().getSceneManager().draw();
+//        m_mask.end();
     
         //m_mask.drawMasker();
         //m_mask.drawMaskee();
     
-        AppManager::getInstance().getStarsManager().draw();
+        AppManager::getInstance().getSceneManager().draw();
         image->draw(0,0,width,height);
     
     m_fbo.end();
@@ -174,6 +181,16 @@ void LayoutManager::createTextVisuals()
     string fontName = LAYOUT_FONT_LIGHT;
     
     auto textVisual = ofPtr<TextVisual>(new TextVisual(pos,w,h,true));
+    textVisual->setText(text, fontName, size, ofColor::white);
+    m_textVisuals[text] = textVisual;
+    
+    
+    fontName = LAYOUT_FONT;
+    size = 8;
+    text = "Frames";
+    pos.x = AppManager::getInstance().getGuiManager().getWidth() + 7*MARGIN;
+    pos.y = size*0.5;
+    textVisual = ofPtr<TextVisual>(new TextVisual(pos,w,h));
     textVisual->setText(text, fontName, size, ofColor::white);
     m_textVisuals[text] = textVisual;
     
@@ -241,6 +258,7 @@ void LayoutManager::draw()
         return;
     
     this->drawFbos();
+    this->drawRectangles();
     this->drawText();
 }
 
@@ -257,6 +275,14 @@ void LayoutManager::drawFbos()
     m_fbo.draw(m_windowRect.x,m_windowRect.y,m_windowRect.width,m_windowRect.height);
 }
 
+void LayoutManager::drawRectangles()
+{
+    bool isRecording = AppManager::getInstance().getImagesExportManager().isRecording();
+    if(isRecording){
+        m_recordingFrame.draw();
+    }
+}
+
 void LayoutManager::windowResized(int w, int h)
 {
     if(!m_initialized){
@@ -266,6 +292,13 @@ void LayoutManager::windowResized(int w, int h)
     this->resetWindowRects();
     this->resetWindowFrames();
     this->resetWindowTitles();
+}
+
+
+void LayoutManager::setFrameText(string& text)
+{
+    string name = "Frames";
+    m_textVisuals[name] ->setText(text);
 }
 
 

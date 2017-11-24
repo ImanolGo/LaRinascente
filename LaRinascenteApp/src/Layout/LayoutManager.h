@@ -58,6 +58,8 @@ public:
     const ofRectangle& getWindowRect() {return m_windowRect;}
     
     const ofFbo& getFbo(){return m_fbo;}
+    
+    void setFrameText(string& text);
 
 
 private:
@@ -89,6 +91,8 @@ private:
 
     void drawText();
     
+    void drawRectangles();
+    
     void resetWindowRects();
     
     void resetWindowFrames();
@@ -96,6 +100,7 @@ private:
     void resetWindowTitles();
     
     void setupWindowFrames();
+    
 private:
 
 
@@ -109,6 +114,7 @@ private:
     
     ofRectangle         m_windowRect;
     RectangleVisual     m_windowFrame;
+    RectangleVisual     m_recordingFrame;
 
     ofFbo               m_fbo;
     ofColor             m_color;

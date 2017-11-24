@@ -21,5 +21,5 @@
 #include "NoiseManager.h"
 #include "StarsManager.h"
 #include "ImagesExportManager.h"
-
+#include "SceneManager.h"
 
