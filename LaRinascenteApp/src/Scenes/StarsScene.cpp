@@ -10,7 +10,7 @@
 #include "StarsScene.h"
 #include "AppManager.h"
 
-StarsScene::StarsScene(): ofxScene("STARS")
+StarsScene::StarsScene(): ofxScene("STARS"), m_elapsedTime(0)
 {
     //Intentionally left empty
 }
@@ -49,9 +49,13 @@ void StarsScene::updateExplosions()
     auto stars = AppManager::getInstance().getStarsManager().getStars();
     auto star = stars[ofRandom(stars.size())];
     
-    
-    ofPoint pos = ofPoint(star->getPosition().x*width, star->getPosition().y*height);
-    m_explosionsVisual.addParticle(pos);
+    auto interval = AppManager::getInstance().getStarsManager().getExplosionsInterval();
+    m_elapsedTime+=ofGetLastFrameTime();
+    if(m_elapsedTime >=interval){
+        m_elapsedTime = 0.0;
+        ofPoint pos = ofPoint(star->getPosition().x*width, star->getPosition().y*height);
+        m_explosionsVisual.addParticle(pos);
+    }
     
     m_explosionsVisual.update();
 }

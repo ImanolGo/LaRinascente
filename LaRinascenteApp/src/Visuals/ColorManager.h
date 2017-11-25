@@ -33,9 +33,6 @@ public:
     //! draw the color manager
     void draw();
     
-    //! updates the current colors
-    void updateColors();
-
     //! Changes the color palette according to a name
     bool changeColorPalette(string paletteName);
     
@@ -54,7 +51,8 @@ public:
     int getIndex(const string& colorPaletteName);
     
     const ofColor& getCurrentColor() const {return m_currentColor;}
-
+    
+    ofColor getRandomColor();
 
 private:
 
@@ -67,8 +65,6 @@ private:
     void loadColorPalettes();
     
     void initializeColorIndexList();
-    
-    ofColor getRandomColorFromList();
     
     //! Sets a new animation type to be active
     void onSetSelectedTypes(const vector<int>& selected);

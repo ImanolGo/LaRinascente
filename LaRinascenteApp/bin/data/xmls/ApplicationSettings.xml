@@ -49,6 +49,30 @@
       <color name="Light Steel Blue" hex="0xccb4d4"/>
     </palette>
 
+     <palette name = "MIXED">
+      <color name="White" hex="0xffffff"/>
+      <color name="Dark Red" hex="0x602320"/>
+      <color name="Red" hex="0xa83434"/>
+      <color name="Blue" hex="0xafdbe6"/>
+      <color name="Dark Blue" hex="0x80b3c0"/>
+    </palette>
+
+    <palette name = "SUNRISE">
+      <color name="Light Coral" hex="0xe65c6f"/>
+      <color name="Salmon" hex="0xf98d77"/>
+      <color name="Khaki" hex="0xffcb69"/>
+      <color name="Dark Khaki" hex="0xffe269"/>
+      <color name="Yellow" hex="0xfffa85"/>
+    </palette>
+
+    <palette name = "SUNSET">
+      <color name="Steel Blue" hex="0x3e56ab"/>
+      <color name="Slate Blue" hex="0x4c5cd6"/>
+      <color name="Medium State Blue" hex="0xa968ee"/>
+      <color name="Violet" hex="0xf0bce9"/>
+      <color name="Moccasin" hex="0xf9eaaf"/>
+    </palette>
+
   </colors>
 
 </settings>

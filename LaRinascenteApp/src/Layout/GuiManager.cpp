@@ -112,6 +112,10 @@ void GuiManager::setupLayoutGui()
     m_starSize.addListener(starsManager, &StarsManager::onSetStarsSize);
     m_parameters.add(m_starSize);
     
+    m_explosionsInterval.set("Star Interval",  0.1, 0.0, 0.5 );
+    m_explosionsInterval.addListener(starsManager, &StarsManager::onSetExplosionsInterval);
+    m_parameters.add(m_explosionsInterval);
+    
     m_currentStar.set("Current Star",  0, 0, 94);
     m_currentStar.addListener(starsManager, &StarsManager::onSetStarPosition);
     m_parameters.add(m_currentStar);
@@ -119,6 +123,7 @@ void GuiManager::setupLayoutGui()
     ofxDatGuiFolder* folder = m_gui.addFolder("LAYOUT", ofColor::white);
     folder->addToggle("RECORD");
     folder->addSlider(m_starSize);
+    folder->addSlider(m_explosionsInterval);
     //folder->addSlider(m_currentStar);
     folder->expand();
     m_gui.addBreak();
@@ -283,7 +288,7 @@ void GuiManager::onDropdownEvent(ofxDatGuiDropdownEvent e)
     else if(e.target->getName() == "COLOR MODE")
     {
         AppManager::getInstance().getColorManager().changeColorPalette(e.target->getLabel());
-        //m_gui.getDropdown(e.target->getName())->expand();
+        m_gui.getDropdown(e.target->getName())->expand();
         m_gui.getDropdown(e.target->getName())->setLabel("COLOR MODE: " + e.target->getLabel());
     }
 }

@@ -11,16 +11,6 @@
 
 #include "Manager.h"
 
-struct weather_settings
-{
-    float lat{0.0};
-    float lon{0.0};
-    float request_time{2.0};
-    string city{"berlin"};
-    string key{""};
-    string units{"metric"};
-};
-
 
 //========================== class SettingsManager ==============================
 //============================================================================
@@ -61,13 +51,9 @@ public:
     
     string getIpAddress() const {return m_ipAddress;}
     
-    string getSpoutName() const {return m_spoutName;}
-    
     int getOscPortReceive() const {return m_portOscReceive;}
     
     int getOscPortSend() const {return m_portOscSend;}
-    
-    weather_settings getWeatherSettings() const {return m_weatherSettings;}
     
     
 private:
@@ -83,9 +69,6 @@ private:
     
     //! Sets all the network properties
     void setNetworkProperties();
-    
-    //! Sets all the weather properties
-    void setWeatherProperties();
     
     //! Sets all the window properties
     void setWindowProperties();
@@ -117,8 +100,6 @@ private:
     int                     m_portOscReceive;       ///< stores the  port to receive OSC messages from
     int                     m_portOscSend;          ///< stores the  port to send OSC messages to
     string                  m_ipAddress;             ///< stores the Ip Address used for the Network communications
-    string                  m_spoutName;			///<stores the name of the spout pipe name
-    weather_settings        m_weatherSettings;      ///<stores the weather api's settings
     
 };
 

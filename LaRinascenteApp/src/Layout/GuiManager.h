@@ -114,6 +114,7 @@ private:
     ofParameterGroup         m_parameters;
     
     ofParameter<float>       m_starSize;
+    ofParameter<float>       m_explosionsInterval;
     ofParameter<int>         m_currentStar;
     
     ofParameter<int>        m_noiseResolution;

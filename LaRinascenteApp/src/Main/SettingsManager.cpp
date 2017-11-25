@@ -47,7 +47,6 @@ void SettingsManager::loadAllSettings()
     this->setWindowProperties();
     this->setDebugProperties();
     this->setNetworkProperties();
-    this->setWeatherProperties();
     this->loadTextureSettings();
     this->loadSvgSettings();
     this->loadVideoSettings();
@@ -133,30 +132,6 @@ void SettingsManager::setWindowProperties()
     ofLogNotice() <<"SettingsManager::setWindowProperties->  path not found: " << windowPath ;
 }
 
-void SettingsManager::setWeatherProperties()
-{
-    m_xml.setTo("//");
-    
-    string windowPath = "//api/weather";
-    if(m_xml.exists(windowPath)) {
-        m_xml.setTo(windowPath);
-        typedef   std::map<string, string>   AttributesMap;
-        AttributesMap attributes = m_xml.getAttributes();
-        m_weatherSettings.key = attributes["key"];
-        m_weatherSettings.city = attributes["city"];
-        m_weatherSettings.units = attributes["units"];
-        m_weatherSettings.lat = ofToFloat(attributes["lat"]);
-        m_weatherSettings.lon = ofToFloat(attributes["lon"]);
-        m_weatherSettings.request_time = ofToFloat(attributes["request_time"]);
-        
-        ofLogNotice() <<"SettingsManager::setWeatherProperties->  successfully loaded the weather settings" ;
-        ofLogNotice() <<"SettingsManager::setWeatherProperties->  city = "<< m_weatherSettings.city <<", units = " << m_weatherSettings.units <<", lat = "
-        <<m_weatherSettings.lat <<", lon = "<<m_weatherSettings.lon<<", request time = "<<m_weatherSettings.request_time<<", key = "<<m_weatherSettings.key;
-        return;
-    }
-    
-    ofLogNotice() <<"SettingsManager::setWeatherProperties->  path not found: " << windowPath ;
-}
 
 void SettingsManager::setNetworkProperties()
 {
@@ -171,8 +146,6 @@ void SettingsManager::setNetworkProperties()
         m_portOscReceive  = ofToInt(attributes["portOscReceive"]);
         m_portOscSend  = ofToInt(attributes["portOscSend"]);
         m_ipAddress  = ofToString(attributes["ipAddress"]);
-        m_spoutName = ofToString(attributes["spout"]);
-        
         
         ofLogNotice() <<"SettingsManager::setNetworkProperties->  successfully loaded the network settings" ;
         return;

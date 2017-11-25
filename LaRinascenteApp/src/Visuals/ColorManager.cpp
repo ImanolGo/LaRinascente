@@ -138,7 +138,6 @@ bool ColorManager::changeColorPalette(string paletteName)
         ofLogNotice() <<"ColorManager::changeColorPalette -> Changed to palette: " << m_currentPaletteName;
         AppManager::getInstance().getGuiManager().onResetColors();
         this->initializeColorIndexList();
-        this->updateColors();
     
         return true;
     }
@@ -193,21 +192,17 @@ int ColorManager::getIndex(const string& colorPaletteName)
     return -1;
 }
 
-void ColorManager::updateColors()
-{
-    if(m_colorIndexList.empty()){
-        this->initializeColorIndexList();
-    }
-    
-    m_currentColor = this->getRandomColorFromList();
-}
-
-ofColor ColorManager::getRandomColorFromList()
+ofColor ColorManager::getRandomColor()
 {
     int randomNum = (int) ofRandom(0,m_colorIndexList.size());
     int index =  m_colorIndexList[randomNum];
     m_colorIndexList.erase(m_colorIndexList.begin() + randomNum);
     auto color = this->getColor(index);
+    
+    if(m_colorIndexList.empty()){
+        this->initializeColorIndexList();
+    }
+    
     return ofColor(color->r,color->g,color->b);
 }
 

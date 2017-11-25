@@ -15,7 +15,7 @@
 const string StarsManager::STARS_LIST_PATH = "stars/";
 
 
-StarsManager::StarsManager(): Manager(), m_starsSize(20.0), m_currentStarInde(0)
+StarsManager::StarsManager(): Manager(), m_starsSize(20.0), m_currentStarInde(0), m_explosionInterval(0)
 {
 	//Intentionally left empty
 }
@@ -201,6 +201,11 @@ void StarsManager::onSetStarsSize(float &value)
     for(auto star: m_stars){
         star->setWidth(m_starsSize);
     }
+}
+
+void StarsManager::onSetExplosionsInterval(float &value)
+{
+    m_explosionInterval = value;
 }
 
 void StarsManager::showChannels(bool _showChannels)

@@ -53,7 +53,7 @@ private:
 private:
     
     ExplosionVisual         m_explosionsVisual;
-    
+    float                   m_elapsedTime;
     
 };
 

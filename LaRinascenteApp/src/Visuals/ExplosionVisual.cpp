@@ -34,7 +34,8 @@ void ExplosionParticle::setup()
     m_lifeTime = 1 + ofRandom(2);
     
     m_size = height + ofNoise( ofGetElapsedTimef()/2)*height*0.5 ;
-    m_color = ofColor::white;
+   // m_color = ofColor::white;
+    m_color = AppManager::getInstance().getColorManager().getRandomColor();
     
     m_image.setResource("EXPLOSION");
     m_image.setCentred(true);
