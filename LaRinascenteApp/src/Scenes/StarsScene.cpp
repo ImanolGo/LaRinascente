@@ -50,11 +50,12 @@ void StarsScene::updateExplosions()
     auto star = stars[ofRandom(stars.size())];
     
     auto interval = AppManager::getInstance().getStarsManager().getExplosionsInterval();
+    auto time = AppManager::getInstance().getStarsManager().getExplosionsTime();
     m_elapsedTime+=ofGetLastFrameTime();
     if(m_elapsedTime >=interval){
         m_elapsedTime = 0.0;
         ofPoint pos = ofPoint(star->getPosition().x*width, star->getPosition().y*height);
-        m_explosionsVisual.addParticle(pos);
+        m_explosionsVisual.addParticle(pos, time);
     }
     
     m_explosionsVisual.update();

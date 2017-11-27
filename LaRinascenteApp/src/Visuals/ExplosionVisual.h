@@ -30,7 +30,7 @@ public:
     
     
     //! Constructor
-    ExplosionParticle(const ofPoint& pos);
+    ExplosionParticle(const ofPoint& pos, float time);
     
     //! Destructor
     ~ExplosionParticle();
@@ -92,9 +92,10 @@ public:
      
     const ofFbo& getFbo() const {return m_fbo;}
      
-    void addParticle(const ofPoint& pos);
+    void addParticle(const ofPoint& pos, float time);
      
     bool empty() {return m_particles.empty();}
+
      
 private:
      
@@ -118,7 +119,6 @@ private:
      
      double                 m_elapsedTime;
      double                 m_newParticleTime;
-
 };
 
 

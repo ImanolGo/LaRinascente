@@ -19,7 +19,7 @@ const string GuiManager::GUI_SETTINGS_NAME = "GUI";
 const int GuiManager::GUI_WIDTH = 350;
 
 
-GuiManager::GuiManager(): Manager(), m_showGui(true)
+GuiManager::GuiManager(): Manager(), m_showGui(true), m_recordToggle(NULL)
 {
 	//Intentionally left empty
 }
@@ -116,14 +116,19 @@ void GuiManager::setupLayoutGui()
     m_explosionsInterval.addListener(starsManager, &StarsManager::onSetExplosionsInterval);
     m_parameters.add(m_explosionsInterval);
     
+    m_explosionsTime.set("Star Time",  1.0, 0.0, 5.0 );
+    m_explosionsTime.addListener(starsManager, &StarsManager::onSetExplosionsTime);
+    m_parameters.add(m_explosionsTime);
+    
     m_currentStar.set("Current Star",  0, 0, 94);
     m_currentStar.addListener(starsManager, &StarsManager::onSetStarPosition);
     m_parameters.add(m_currentStar);
 
     ofxDatGuiFolder* folder = m_gui.addFolder("LAYOUT", ofColor::white);
-    folder->addToggle("RECORD");
+    m_recordToggle = folder->addToggle("RECORD");
     folder->addSlider(m_starSize);
     folder->addSlider(m_explosionsInterval);
+    folder->addSlider(m_explosionsTime);
     //folder->addSlider(m_currentStar);
     folder->expand();
     m_gui.addBreak();
@@ -384,3 +389,15 @@ void GuiManager::onColorModeChange(int colorModeIndex)
     menu->setLabel(dropBoxName + ": " + label);
     AppManager::getInstance().getColorManager().changeColorPalette(label);
 }
+
+void GuiManager::toggleRecord()
+{
+    if(m_recordToggle!=NULL)
+    {
+        m_recordToggle->toggle();
+        AppManager::getInstance().getImagesExportManager().onSetRecording(m_recordToggle->getChecked());
+    }
+}
+    
+    
+

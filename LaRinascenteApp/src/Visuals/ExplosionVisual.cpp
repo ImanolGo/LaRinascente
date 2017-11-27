@@ -12,7 +12,7 @@
 
 
 
-ExplosionParticle::ExplosionParticle(const ofPoint& pos): BasicVisual(pos,0,0), m_lifeTime(5), m_live(true), m_time(0), m_initSize(0.0)
+ExplosionParticle::ExplosionParticle(const ofPoint& pos, float time): BasicVisual(pos,0,0), m_lifeTime(time), m_live(true), m_time(0), m_initSize(0.0)
 {
     this->setup();
 }
@@ -29,9 +29,10 @@ void ExplosionParticle::setup()
     float height = AppManager::getInstance().getSettingsManager().getAppHeight();
     
     m_time = 0;
-    m_initSize = 0 + ofNoise( ofGetElapsedTimef()/4)*20;
+   // m_initSize = 0 + ofNoise( ofGetElapsedTimef()/4)*20;
+    m_initSize = 0 ;
     //m_lifeTime = 1 + ofNoise( ofGetElapsedTimef()/2)*2;
-    m_lifeTime = 1 + ofRandom(2);
+    m_lifeTime = m_lifeTime + ofRandom(-m_lifeTime/4,m_lifeTime/4);
     
     m_size = height + ofNoise( ofGetElapsedTimef()/2)*height*0.5 ;
    // m_color = ofColor::white;
@@ -205,13 +206,13 @@ void ExplosionVisual::drawParticles()
 }
 
 
-void ExplosionVisual::addParticle(const ofPoint &pos)
+void ExplosionVisual::addParticle(const ofPoint &pos, float time)
 {
     m_elapsedTime += ofGetLastFrameTime();
     
     if (m_elapsedTime >= m_newParticleTime) {
         m_elapsedTime = 0.0;
-        auto particle = ofPtr<ExplosionParticle> (new ExplosionParticle(pos));
+        auto particle = ofPtr<ExplosionParticle> (new ExplosionParticle(pos,time));
         m_particles.push_back(particle);
     }
    

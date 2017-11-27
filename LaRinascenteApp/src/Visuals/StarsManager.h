@@ -69,6 +69,10 @@ class StarsManager: public Manager
     
         float getExplosionsInterval() const {return m_explosionInterval;}
     
+        void onSetExplosionsTime(float &value);
+    
+        float getExplosionsTime() const {return m_explosionTime;}
+    
         void showChannels(bool _showChannels);
     
         void onSetStarPosition(int& value);
@@ -107,6 +111,7 @@ class StarsManager: public Manager
     
         float           m_starsSize;
         float           m_explosionInterval;
+        float           m_explosionTime;
     
 };
 

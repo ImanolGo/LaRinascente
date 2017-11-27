@@ -1,9 +1,10 @@
 <group>
 	<Framerate>28</Framerate>
 	<Star_Size>41.01</Star_Size>
-	<Star_Interval>0.04</Star_Interval>
+	<Star_Interval>0.24</Star_Interval>
+	<Star_Time>3.26</Star_Time>
 	<Current_Star>0</Current_Star>
-	<Noise_Resolution>72</Noise_Resolution>
+	<Noise_Resolution>136</Noise_Resolution>
 	<Noise_Frequency>1.26</Noise_Frequency>
-	<Noise_Speed>0.49</Noise_Speed>
+	<Noise_Speed>0.44</Noise_Speed>
 </group>

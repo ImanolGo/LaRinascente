@@ -18,7 +18,7 @@
   <textures>
 
     <texture name="FACADE" path="images/general/LaRinascenteFacade.png"/>
-    <texture name="STAR" path="images/general/star_small.png"/>
+    <texture name="STAR" path="images/general/star.png"/>
     <texture name="EXPLOSION" path="images/general/explosion2.png"/>
 
   </textures>

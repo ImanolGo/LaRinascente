@@ -81,6 +81,8 @@ public:
     
     void onColorChange(int colorIndex);
     
+    void toggleRecord();
+    
     void onResetColors();
     
 private:
@@ -115,11 +117,13 @@ private:
     
     ofParameter<float>       m_starSize;
     ofParameter<float>       m_explosionsInterval;
+    ofParameter<float>       m_explosionsTime;
     ofParameter<int>         m_currentStar;
     
     ofParameter<int>        m_noiseResolution;
     ofParameter<float>      m_noiseFrequency;
     ofParameter<float>      m_noiseSpeed;
+    ofxDatGuiToggle*        m_recordToggle;
     
     vector<ofColor>         m_colors;
    

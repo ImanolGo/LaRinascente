@@ -55,6 +55,10 @@ void KeyboardManager::keyPressed(ofKeyEventArgs &e)
         //AppManager::getInstance().getLightSculptureManager().onToggleShowIds();
     }
     
+    if(key == 'r' || key == 'R') {
+        AppManager::getInstance().getGuiManager().toggleRecord();
+    }
+    
 //    if(key == OF_KEY_RIGHT) {
 //        AppManager::getInstance().getStarsManager().increaseCurrentX();
 //    }
