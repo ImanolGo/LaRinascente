@@ -79,6 +79,9 @@ public:
     //! Returns the color manager
     ColorManager&  getColorManager() { return m_colorManager; }
     
+    //! Returns the leds manager
+    LedsManager&  getLedsManager() { return m_ledsManager; }
+    
     
 
     //==========================================================================
@@ -126,6 +129,7 @@ private:
     ImagesExportManager      m_imagesExportManager;      ///< Manages the image exporter
     SceneManager             m_sceneManager;             ///< Manages the scenes
     ColorManager             m_colorManager;             ///< Manages the colors
+    LedsManager              m_ledsManager;             ///< Manages the pixels
     
     
     

@@ -3,10 +3,12 @@
 
   <of_settings>
 
-    <!--   <window title="LaRinascenteApp" x="0" y="0" width="640" height="300" fullscreen="0" showCursor="1"/> -->
-      <window title="LaRinascenteApp" x="0" y="0" width="2000" height="936" fullscreen="0" showCursor="1"/>
+     <!--  <window title="LaRinascenteApp" x="0" y="0" width="640" height="300" fullscreen="0" showCursor="1"/> -->
+      <window title="LaRinascenteApp" x="0" y="0" width="457" height="133" fullscreen="0" showCursor="1"/>
+     <!--   <window title="LaRinascenteApp" x="0" y="0" width="100" height="31" fullscreen="0" showCursor="1"/> -->
+      <!-- <window title="LaRinascenteApp" x="0" y="0" width="2000" height="936" fullscreen="0" showCursor="1"/>
 
-
+     -->
 
 
     <debug showCursor="1" setVerbose="1"/> 
@@ -18,8 +20,9 @@
   <textures>
 
     <texture name="FACADE" path="images/general/LaRinascenteFacade.png"/>
+    <texture name="FACADE_MASK" path="images/general/LaRinascenteFacadeMask.png"/>
     <texture name="STAR" path="images/general/star.png"/>
-    <texture name="EXPLOSION" path="images/general/explosion2.png"/>
+    <texture name="EXPLOSION" path="images/general/explosion3.png"/>
 
   </textures>
 

@@ -119,6 +119,7 @@ private:
     ofParameter<float>       m_explosionsInterval;
     ofParameter<float>       m_explosionsTime;
     ofParameter<int>         m_currentStar;
+    ofParameter<float>       m_ledsSize;
     
     ofParameter<int>        m_noiseResolution;
     ofParameter<float>      m_noiseFrequency;

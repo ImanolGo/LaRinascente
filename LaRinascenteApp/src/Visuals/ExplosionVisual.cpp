@@ -26,7 +26,7 @@ ExplosionParticle::~ExplosionParticle()
 
 void ExplosionParticle::setup()
 {
-    float height = AppManager::getInstance().getSettingsManager().getAppHeight();
+    float size = AppManager::getInstance().getSettingsManager().getAppWidth();
     
     m_time = 0;
    // m_initSize = 0 + ofNoise( ofGetElapsedTimef()/4)*20;
@@ -34,7 +34,7 @@ void ExplosionParticle::setup()
     //m_lifeTime = 1 + ofNoise( ofGetElapsedTimef()/2)*2;
     m_lifeTime = m_lifeTime + ofRandom(-m_lifeTime/4,m_lifeTime/4);
     
-    m_size = height + ofNoise( ofGetElapsedTimef()/2)*height*0.5 ;
+    m_size = size + ofNoise( ofGetElapsedTimef()/2)*size*0.5 ;
    // m_color = ofColor::white;
     m_color = AppManager::getInstance().getColorManager().getRandomColor();
     
@@ -116,8 +116,8 @@ void ExplosionVisual::setupShaders()
         
     }
     
-    m_frequency = 0.6;
-    m_amplitude = 1.0;
+    m_frequency = 0.4;
+    m_amplitude = 0.4;
     m_speed = 0.5;
 }
 

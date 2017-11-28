@@ -23,4 +23,5 @@
 #include "ImagesExportManager.h"
 #include "SceneManager.h"
 #include "ColorManager.h"
+#include "LedsManager.h"
 

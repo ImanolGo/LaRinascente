@@ -91,6 +91,8 @@ class StarsManager: public Manager
     
         void readStarsPositions();
     
+        void createStarsPositions();
+    
         void saveStarsPositions();
         
         bool parseStarLine(string& line, ofPoint& position);

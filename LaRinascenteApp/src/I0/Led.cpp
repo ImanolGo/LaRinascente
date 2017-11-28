@@ -1,41 +1,42 @@
 /*
- *  Star.cpp
- *  LaRinascenteApp
+ *  Led.cpp
+ *  Video Led Mapper
  *
- *  Created by Imanol Gomez on 22/11/17.
+ *  Created by Imanol Gomez on 18/09/17.
  *
  */
 
-#include "Star.h"
+
+#include "Led.h"
 
 
-const int Star::SIZE = 20;
+const int Led::SIZE = 20;
 
-Star::Star(const ofPoint& position, int id): BasicVisual(position, SIZE, SIZE), m_id(id), m_showId(false)
+Led::Led(const ofPoint& position, int id): BasicVisual(position, SIZE, SIZE), m_id(id), m_showId(false)
 {
     this->setup();
 }
 
-Star::~Star()
+Led::~Led()
 {
     //Intentionaly left empty
 }
 
-void Star::setup()
+void Led::setup()
 {
-    this->setupImages();
+   // this->setupImages();
     this->setupText();
 }
 
 
-void Star::setupImages()
+void Led::setupImages()
 {
     ofVec3f position(0,0);
-    string resourceName = "STAR";
+    string resourceName = "brush";
     m_image = ofPtr<ImageVisual> (new ImageVisual(m_position,resourceName, true));
 }
 
-void Star::setupText()
+void Led::setupText()
 {
     
     ofVec3f position(0,0);
@@ -50,25 +51,28 @@ void Star::setupText()
 }
 
 
-void Star::draw()
+void Led::draw()
 {
     ofPushMatrix();
     ofPushStyle();
     
     ofTranslate(m_position);
     ofScale(m_scale.x, m_scale.y);
-    //ofTranslate(-m_width*0.5,-m_width*0.5);
+    ofTranslate(-m_width*0.5,-m_width*0.5);
     
     ofRotateX(m_rotation.x);
     ofRotateY(m_rotation.y);
     
-    
+  
     ofFill();
     ofSetColor(m_color);
-    ofDrawRectangle(-m_width*0.5,-m_width*0.5, m_width, m_width);
+    ofDrawRectangle(0, 0, m_width, m_width);
     
-    //m_image->setWidth(this->getWidth(),true);
-    //m_image->draw();
+   // ofSetCircleResolution(20);
+//    ofSetColor(0);
+//    ofDrawCircle(0, 0, m_width);
+//    ofSetColor(m_color);
+//    ofDrawCircle(0, 0, m_width*0.9);
     
     ofPopStyle();
     
@@ -78,7 +82,7 @@ void Star::draw()
     ofPopMatrix();
 }
 
-void Star::draw(int width, int height)
+void Led::draw(int width, int height)
 {
     
     ofPushMatrix();
@@ -87,23 +91,20 @@ void Star::draw(int width, int height)
     ofPopMatrix();
 }
 
-void Star::normalize(const ofRectangle& boundingBox)
+void Led::normalize(const ofRectangle& boundingBox)
 {
     m_position.x = (m_position.x - boundingBox.getX()) / boundingBox.getWidth();
     m_position.y = (m_position.y - boundingBox.getY()) / boundingBox.getHeight();
 }
 
 
-void Star::setPixelColor(ofPixels& pixels)
+void Led::setPixelColor(ofPixelsRef pixels)
 {
-    auto color = pixels.getColor(m_position.x * pixels.getWidth(), m_position.y * pixels.getHeight());
-    //int brightness = ofMap(color.getBrightness(), 0, 255, 0, 255);
-     int brightness = color.getBrightness();
-    //int brightness = 100;
+    m_color = pixels.getColor(m_position.x * pixels.getWidth(), m_position.y * pixels.getHeight());
+    //int brightness = m_color.getBrightness();
     //m_color = ofColor( 255, 194, 0);
     //m_color = ofColor::white;
-    m_color.setBrightness(brightness);
-    m_image->setColor(m_color);
+    //m_color.setBrightness(brightness);
     //m_color = ofColor(brightness);
 }
 

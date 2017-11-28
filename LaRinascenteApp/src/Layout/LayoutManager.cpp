@@ -69,6 +69,9 @@ void LayoutManager::setupFbo()
     
     m_fbo.allocate(width, height, GL_RGB);
     m_fbo.begin(); ofClear(0); m_fbo.end();
+    
+    m_previewFbo.allocate(width, height, GL_RGB);
+    m_previewFbo.begin(); ofClear(0); m_previewFbo.end();
 }
 
 void LayoutManager::setupMask()
@@ -76,10 +79,10 @@ void LayoutManager::setupMask()
     float width = AppManager::getInstance().getSettingsManager().getAppWidth();
     float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
     
-    m_mask.allocate(width, height, ofxMask::ALPHA);
+    m_mask.allocate(width, height, ofxMask::LUMINANCE);
     
     
-    auto image = AppManager::getInstance().getResourceManager().getTexture("FACADE");
+    auto image = AppManager::getInstance().getResourceManager().getTexture("FACADE_MASK");
     m_mask.beginMask();
     
     m_mask.beginMask();
@@ -92,23 +95,39 @@ void LayoutManager::setupMask()
 void LayoutManager::resetWindowRects()
 {
     
+    
     float width = AppManager::getInstance().getSettingsManager().getAppWidth();
     float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
     float ratio = width/ height;
     float frame_width = ofGetWidth() - AppManager::getInstance().getGuiManager().getWidth() - 2*MARGIN;
     
-    
-    m_windowRect.width = frame_width- 4*MARGIN;
-    m_windowRect.height =  m_windowRect.width / ratio;
-    
-    if(m_windowRect.height >= (ofGetHeight() - 4*MARGIN))
+    if(frame_width >= ofGetHeight())
     {
-         m_windowRect.height =  ofGetHeight() - 4*MARGIN;
-         m_windowRect.width =  m_windowRect.height * ratio;
+        m_windowRect.width = 3*frame_width/5 - 2*MARGIN;
+        m_windowRect.height =  m_windowRect.width / ratio;
+        
+        m_previewWindowRect.width = 2*frame_width/5 - 2*MARGIN;
+        m_previewWindowRect.height = m_previewWindowRect.width / ratio;
+        
+        m_windowRect.x = AppManager::getInstance().getGuiManager().getWidth()  + 3*MARGIN;
+        m_windowRect.y = ofGetHeight()*0.5 - m_windowRect.height/2;
+        
+        m_previewWindowRect.x = m_windowRect.x + 2*MARGIN + m_windowRect.width;
+        m_previewWindowRect.y =  ofGetHeight()*0.5 - m_previewWindowRect.height/2;
     }
-    
-    m_windowRect.x = AppManager::getInstance().getGuiManager().getWidth() + MARGIN +(ofGetWidth() -  AppManager::getInstance().getGuiManager().getWidth())*0.5 - m_windowRect.width*0.5;
-    m_windowRect.y = ofGetHeight()*0.5 - m_windowRect.height*0.5;
+    else
+    {
+        m_windowRect.width = frame_width - 2*MARGIN;
+        m_windowRect.height =  m_windowRect.width / ratio;
+        
+        m_previewWindowRect.width = 3*m_windowRect.width/4;
+        m_previewWindowRect.height = m_previewWindowRect.width / ratio;
+        
+        m_windowRect.x = AppManager::getInstance().getGuiManager().getWidth()  + 3*MARGIN;
+        
+        m_previewWindowRect.x = m_windowRect.x;
+        m_previewWindowRect.y = m_windowRect.y + m_windowRect.height + 2*MARGIN  + m_textVisuals["3D"]->getHeight();
+    }
     
 }
 
@@ -124,6 +143,7 @@ void LayoutManager::setupWindowFrames()
 
     ofColor color = AppManager::getInstance().getSettingsManager().getColor("FrameRectangle");
     m_windowFrame.setColor(color);
+     m_previewWindowFrame.setColor(color);
     
     
     m_recordingFrame.setWidth(width); m_recordingFrame.setHeight(height);
@@ -136,6 +156,9 @@ void LayoutManager::resetWindowFrames()
 {
     m_windowFrame.setPosition(ofPoint( m_windowRect.x - FRAME_MARGIN, m_windowRect.y - FRAME_MARGIN, 0));
     m_windowFrame.setWidth(m_windowRect.width + 2*FRAME_MARGIN); m_windowFrame.setHeight(m_windowRect.height + 2*FRAME_MARGIN);
+    
+    m_previewWindowFrame.setPosition(ofPoint( m_previewWindowRect.x - FRAME_MARGIN, m_previewWindowRect.y - FRAME_MARGIN, 0));
+    m_previewWindowFrame.setWidth(m_previewWindowRect.width + 2*FRAME_MARGIN); m_previewWindowFrame.setHeight(m_previewWindowRect.height + 2*FRAME_MARGIN);
 }
 
 
@@ -147,26 +170,46 @@ void LayoutManager::update()
 
 void LayoutManager::updateFbos()
 {
+    
+    this->updateOutputFbo();
+    this->updatePreviewFbo();
+    
+}
+
+void LayoutManager::updateOutputFbo()
+{
+    auto image = AppManager::getInstance().getResourceManager().getTexture("FACADE_MASK");
+    float width = AppManager::getInstance().getSettingsManager().getAppWidth();
+    float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
+    
+    
+    ofEnableAlphaBlending();
+    m_fbo.begin();
+    ofClear(0, 0, 0);
+        AppManager::getInstance().getLedsManager().draw(width,height);
+        //AppManager::getInstance().getSceneManager().draw();
+        //image->draw(0,0,width,height);
+    m_fbo.end();
+    ofDisableAlphaBlending();
+    
+}
+
+void LayoutManager::updatePreviewFbo()
+{
     auto image = AppManager::getInstance().getResourceManager().getTexture("FACADE");
     float width = AppManager::getInstance().getSettingsManager().getAppWidth();
     float height  = AppManager::getInstance().getSettingsManager().getAppHeight();
     
     ofEnableAlphaBlending();
-    m_fbo.begin();
-        ofClear(0, 0, 0);
-//        m_mask.begin();
-//            AppManager::getInstance().getSceneManager().draw();
-//        m_mask.end();
-    
-        //m_mask.drawMasker();
-        //m_mask.drawMaskee();
-    
-        AppManager::getInstance().getSceneManager().draw();
-        image->draw(0,0,width,height);
-    
-    m_fbo.end();
+    m_previewFbo.begin();
+    ofClear(0, 0, 0);
+    AppManager::getInstance().getSceneManager().draw();
+     //image->draw(0,0,width,height);
+    m_previewFbo.end();
     ofDisableAlphaBlending();
+    
 }
+
 
 
 void LayoutManager::createTextVisuals()
@@ -177,12 +220,21 @@ void LayoutManager::createTextVisuals()
     float x =  m_windowRect.x + m_windowRect.getWidth()*0.5;
     float y =  m_windowRect.y - h -MARGIN;
     ofPoint pos = ofPoint(x, y);
-    string text = "Preview";
+    string text = "Output";
     string fontName = LAYOUT_FONT_LIGHT;
+    
     
     auto textVisual = ofPtr<TextVisual>(new TextVisual(pos,w,h,true));
     textVisual->setText(text, fontName, size, ofColor::white);
     m_textVisuals[text] = textVisual;
+    
+    
+    x =  m_previewWindowRect.x + m_previewWindowRect.getWidth()*0.5;
+    y =  m_previewWindowRect.y - h - 2*MARGIN;
+    text = "3D Preview";
+    textVisual = ofPtr<TextVisual>(new TextVisual(pos,w,h,true));
+    textVisual->setText(text, fontName, size, ofColor::white);
+    m_textVisuals["3D"] = textVisual;
     
     
     fontName = LAYOUT_FONT;
@@ -200,9 +252,14 @@ void LayoutManager::createTextVisuals()
 void LayoutManager::resetWindowTitles()
 {
     float x =  m_windowRect.x + m_windowRect.getWidth()*0.5;
-    float y =  m_windowRect.y -  m_textVisuals["Preview"]->getHeight()*0.2;
+    float y =  m_windowRect.y -  m_textVisuals["Output"]->getHeight()*0.5 - MARGIN;
     ofPoint pos = ofPoint(x, y);
-    m_textVisuals["Preview"]->setPosition(pos);
+    m_textVisuals["Output"]->setPosition(pos);
+    
+    
+    pos.x =  m_previewWindowRect.x + m_previewWindowRect.getWidth()*0.5;
+    pos.y =  m_previewWindowRect.y - m_textVisuals["3D"]->getHeight()*0.5  - MARGIN;
+    m_textVisuals["3D"]->setPosition(pos);
     
 }
 
@@ -271,8 +328,22 @@ void LayoutManager::drawText()
 
 void LayoutManager::drawFbos()
 {
+    this->drawOutputFbo();
+    this->drawPreviewFbo();
+}
+
+
+void LayoutManager::drawOutputFbo()
+{
     m_windowFrame.draw();
     m_fbo.draw(m_windowRect.x,m_windowRect.y,m_windowRect.width,m_windowRect.height);
+}
+
+void LayoutManager::drawPreviewFbo()
+{
+    
+    m_previewWindowFrame.draw();
+    m_previewFbo.draw(m_previewWindowRect.x,m_previewWindowRect.y,m_previewWindowRect.width,m_previewWindowRect.height);
 }
 
 void LayoutManager::drawRectangles()

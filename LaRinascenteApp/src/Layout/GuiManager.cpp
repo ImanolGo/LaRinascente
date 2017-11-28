@@ -107,6 +107,7 @@ void GuiManager::setupScenesGui()
 void GuiManager::setupLayoutGui()
 {
     auto starsManager = &AppManager::getInstance().getStarsManager();
+    auto ledsManager = &AppManager::getInstance().getLedsManager();
     
     m_starSize.set("Star Size",  20.0, 0.0, 100.0 );
     m_starSize.addListener(starsManager, &StarsManager::onSetStarsSize);
@@ -123,9 +124,14 @@ void GuiManager::setupLayoutGui()
     m_currentStar.set("Current Star",  0, 0, 94);
     m_currentStar.addListener(starsManager, &StarsManager::onSetStarPosition);
     m_parameters.add(m_currentStar);
+    
+    m_ledsSize.set("Leds Size", 8.0, 2.0, 40);
+    m_ledsSize.addListener(ledsManager, &LedsManager::onSetLedsSize);
+    m_parameters.add(m_ledsSize);
 
     ofxDatGuiFolder* folder = m_gui.addFolder("LAYOUT", ofColor::white);
     m_recordToggle = folder->addToggle("RECORD");
+    folder->addSlider(m_ledsSize);
     folder->addSlider(m_starSize);
     folder->addSlider(m_explosionsInterval);
     folder->addSlider(m_explosionsTime);

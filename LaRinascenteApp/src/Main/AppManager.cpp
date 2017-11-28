@@ -73,6 +73,7 @@ void AppManager::setupManagers()
     m_layoutManager.setup();
     m_starsManager.setup();
     m_keyboardManager.setup();
+    m_ledsManager.setup();
     m_sceneManager.setup();
     m_imagesExportManager.setup();
     m_noiseManager.setup();
@@ -91,6 +92,7 @@ void AppManager::update()
     m_sceneManager.update();
     m_guiManager.update();
     m_layoutManager.update();
+    m_ledsManager.update();
     m_imagesExportManager.update();
 }
 

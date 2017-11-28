@@ -44,9 +44,46 @@ void StarsManager::setup()
 
 void StarsManager::setupStars()
 {
-    this->readStarsPositions();
+    //this->readStarsPositions();
+    this->createStarsPositions();
 }
 
+void StarsManager::createStarsPositions()
+{
+    vector<float> x_vector = {4.5, 32.5, 60.5,  88.5, 116.5,  144.5, 172.5, 200.5, 227.5, 256.5, 284.5 , 312.5, 340.5, 368.5, 396.5, 424.5, 452.5 };
+    
+    vector<float> y_vector = {36.5, 64.5, 92.5,  120.5};
+    
+    float w = 457;
+    float h = 133;
+    
+    for(auto x: x_vector){
+        for(auto y: y_vector){
+            ofPoint starPosition;
+            starPosition.x = x/w;
+            starPosition.y = y/h;
+            createStar(starPosition);
+        }
+    }
+//    int num_rows = 4;
+//    int num_cols = 17;
+//    float x_offset = 0.00985;
+//    float y_offset = 0.24436;
+//
+//    float w = 0.07;
+//    float h = 0.2406;
+//
+//    for(int i = 0; i< num_rows; i++){
+//        for(int j = 0; j< num_cols; j++){
+//
+//            float x = x_offset + j*w;
+//            float y =  y_offset + i*h;
+//
+//            ofPoint starPosition(x,y,0.0);
+//            createStar(starPosition);
+//        }
+//    }
+}
 
 void StarsManager::addStar(const ofPoint& position)
 {    

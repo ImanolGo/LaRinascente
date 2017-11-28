@@ -59,6 +59,8 @@ public:
     
     const ofFbo& getFbo(){return m_fbo;}
     
+    const ofFbo& getPreviewFbo(){return m_previewFbo;}
+    
     void setFrameText(string& text);
 
 
@@ -86,8 +88,18 @@ private:
     void setupFbo();
     
     void updateFbos();
+    
+    void updateOutputFbo();
+    
+    void updatePreviewFbo();
 
+    void drawOutput();
+    
     void drawFbos();
+    
+    void drawOutputFbo();
+    
+    void drawPreviewFbo();
 
     void drawText();
     
@@ -114,9 +126,12 @@ private:
     
     ofRectangle         m_windowRect;
     RectangleVisual     m_windowFrame;
+    RectangleVisual     m_previewWindowFrame;
+    ofRectangle         m_previewWindowRect;
     RectangleVisual     m_recordingFrame;
 
     ofFbo               m_fbo;
+     ofFbo               m_previewFbo;
     ofColor             m_color;
     
     ofxMask             m_mask;
